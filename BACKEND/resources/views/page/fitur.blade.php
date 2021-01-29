@@ -5,7 +5,7 @@
 @section('container')
     
 <div class="container-fluid mt-5">
-  <table class="table" style="width : 500px">
+  {{-- <table class="table" style="width : 500px">
       <thead>
         <tr>
           <th>Id</th>
@@ -30,10 +30,10 @@
         </tr>
         @endforeach
       </tbody>
-  </table>
-
-<hr>
-<a href="{{ route('logout')}}">Logout</a>
+  </table> --}}
+<h1>
+  ini halaman fitur
+</h1>
 </div>
 
 

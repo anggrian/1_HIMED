@@ -26,15 +26,14 @@ Route::post('/login', [AuthController::class, 'postLogin'])->middleware('guest')
 Route::get('/register', [AuthController::class, 'getRegister'])->middleware('guest')->name('register');
 Route::post('/register', [AuthController::class, 'postRegister'])->middleware('guest');
 // Route for Landing page first
-Route::get('/home', function () {
-    return view('HOME');
-})->middleware('auth')->name('home');
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
-// Route Halaman
 use App\Http\Controllers\PageController;
 
+Route::get('/home', [PageController::class, 'index'])->middleware('auth')->name('home');
+
 Route::resource('halaman', PageController::class);
+// Route Halaman
 
 // Route Fitur
 use App\Http\Controllers\FiturController;
@@ -45,3 +44,5 @@ Route::resource('fitur', FiturController::class);
 use App\Http\Controllers\AkunController;
 
 Route::resource('akun', AkunController::class);
+// Route::resource('account', AkunController::class);
+// Route::get('/account', [AkunController::class, 'account']);

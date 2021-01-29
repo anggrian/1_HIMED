@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Akun;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,9 +15,16 @@ class AkunController extends Controller
      */
     public function index()
     {
-        $akun = DB::table('akun')->get();
+        $akun = DB::table('users')->get();
 
         return view('page/akun', ['akun' => $akun]);
+    }
+
+    public function account()
+    {
+        $data = DB::table('users')->get();
+
+        return view('Account/account', ['user' => $data]);
     }
 
     /**
@@ -47,9 +54,10 @@ class AkunController extends Controller
      * @param  \App\Models\Akun  $akun
      * @return \Illuminate\Http\Response
      */
-    public function show(Akun $akun)
+    public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('page.Akun.profile', ['user' => $user]);
     }
 
     /**
@@ -58,7 +66,7 @@ class AkunController extends Controller
      * @param  \App\Models\Akun  $akun
      * @return \Illuminate\Http\Response
      */
-    public function edit(Akun $akun)
+    public function edit(User $user)
     {
         //
     }
@@ -70,7 +78,7 @@ class AkunController extends Controller
      * @param  \App\Models\Akun  $akun
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Akun $akun)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -81,7 +89,7 @@ class AkunController extends Controller
      * @param  \App\Models\Akun  $akun
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Akun $akun)
+    public function destroy(User $user)
     {
         //
     }

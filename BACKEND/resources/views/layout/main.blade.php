@@ -37,7 +37,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="{{ asset('/home') }}" class="site_title"><i class="fa fa-paw"></i> <span>Anggrian Unchh</span></a>
+              <a href="{{ asset('/home') }}" class="site_title"><i class="fa fa-paw"></i> <span>Admin | Himed</span></a>
             </div>
             <div class="clearfix"></div>
             <hr>
@@ -97,83 +97,16 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{ asset('gentelella/production/images/img.jpg') }}" alt="">John Doe
+                    <img src="{{ asset('gentelella/production/images/img.jpg') }}" alt="">Account
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="javascript:;"> Profile</a>
-                      <a class="dropdown-item"  href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                  <a class="dropdown-item"  href="javascript:;">Help</a>
+                    <a class="dropdown-item"  href="{{ route('akun.show', auth()->user()->id)}}">Profile</a>
+                    <a class="dropdown-item"  href="{{ route('akun.index')}}">Data Account</a>
+                    <a class="dropdown-item"  href="{{ route('akun.index')}}">Register</a>
                     <a class="dropdown-item"  href="{{ route('logout')}}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </div>
                 </li>
 
-                <li role="presentation" class="nav-item dropdown open">
-                  <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="{{ asset('gentelella/production/images/img.jpg') }}" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="{{ asset('gentelella/production/images/img.jpg') }}" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="{{ asset('gentelella/production/images/img.jpg') }}" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="{{ asset('gentelella/production/images/img.jpg') }}" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <div class="text-center">
-                        <a class="dropdown-item">
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
               </ul>
             </nav>
           </div>
@@ -183,25 +116,13 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
-          <div class="row" style="display: inline-block;" >
-
-          <div class="tile_count">
+          <div class="row">
             {{-- the contents of the page | Isi Konten --}}
             @yield('container')
             {{-- /the contents of the page | Isi Konten --}}
-          </div>
-
         </div>
         <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Template cerated by<a href="https://madtive.com"> Madtive Studio</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
+        
       </div>
     </div>
 
