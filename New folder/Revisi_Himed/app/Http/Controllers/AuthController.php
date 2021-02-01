@@ -11,7 +11,8 @@ class AuthController extends Controller
     public function index()
     {
 
-        return view('Backend_admin.Layout.layout');
+        // return view('Backend_admin.Layout.layout');
+        return view('Backend_admin.Layout.dashboard');
     }
 
     public function getLogin()

@@ -1,12 +1,12 @@
 @extends('Backend_admin/Layout/main')
 
-@section('title', 'Blog | Himed')
+@section('title', 'Page | Himed')
 
 @section('container')
     
 <div class="container-fluid mt-5">
 <h1>
-  ini halaman Artikel
+  Dashboard
 </h1>
 </div>
 

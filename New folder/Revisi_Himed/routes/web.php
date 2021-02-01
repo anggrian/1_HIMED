@@ -30,3 +30,23 @@ Route::post('/register', [AuthController::class, 'postRegister'])->middleware('g
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
 Route::get('/home', [AuthController::class, 'index'])->middleware('auth')->name('home');
+
+
+use App\Http\Controllers\PageController;
+
+Route::resource('about', PageController::class);
+
+
+use App\Http\Controllers\AccountController;
+
+Route::resource('account', AccountController::class);
+
+
+use App\Http\Controllers\PackageController;
+
+Route::resource('package', PackageController::class);
+
+
+use App\Http\Controllers\FeatureController;
+
+Route::resource('feature', FeatureController::class);

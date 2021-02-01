@@ -1,14 +1,13 @@
-@extends('layout/main')
+@extends('Backend_admin/Layout/main')
 
-@section('title', 'Fitur | Himed')
+@section('title', 'Blog | Himed')
 
 @section('container')
     
 <div class="container-fluid mt-5">
 <h1>
-  ini halaman koment
+  ini halaman komentar
 </h1>
 </div>
-
 
 @endsection

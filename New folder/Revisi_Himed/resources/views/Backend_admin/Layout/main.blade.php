@@ -49,12 +49,12 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Halaman <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ asset('/tentang') }}">Tentang Himed</a></li>
+                      <li><a href="{{ asset('about') }}">Tentang Himed</a></li>
                       <li><a href="{{ asset('/layanan') }}">Layanan Himed</a></li>
                     </ul>
                   </li>
-                  <li><a href="{{ asset('/fitur') }}"><i class="fa fa-desktop"></i>Fitur Himed</a></li>
-                  <li><a href="{{ asset('/paket') }}"><i class="fa fa-bar-chart-o"></i>Paket Himed</a></li>
+                  <li><a href="{{ asset('feature') }}"><i class="fa fa-desktop"></i>Fitur Himed</a></li>
+                  <li><a href="{{ asset('package') }}"><i class="fa fa-bar-chart-o"></i>Paket Himed</a></li>
                   <li><a><i class="fa fa-laptop"></i>Blog <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ asset('/kategori') }}">Kategori </a></li>
@@ -99,12 +99,12 @@
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                     <img src="{{ asset('gentelella/production/images/img.jpg') }}" alt="">Account
                   </a>
-                  <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                  {{-- <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  href="{{ route('akun.show', auth()->user()->id)}}">Profile</a>
                     <a class="dropdown-item"  href="{{ route('akun.index')}}">Data Account</a>
                     <a class="dropdown-item"  href="{{ route('akun.index')}}">Register</a>
                     <a class="dropdown-item"  href="{{ route('logout')}}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-                  </div>
+                  </div> --}}
                 </li>
 
               </ul>
