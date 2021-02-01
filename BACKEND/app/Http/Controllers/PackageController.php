@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Page;
+use App\Models\Package;
 use Illuminate\Http\Request;
 
-class PageController extends Controller
+class PackageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-        return view('Backend_admin.Contents.Page.about');
+        // return view('Backend_admin.Contents.Package.package_himed');
     }
 
     /**
@@ -42,10 +41,10 @@ class PageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Page  $page
+     * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function show(Page $page)
+    public function show(Package $package)
     {
         //
     }
@@ -53,10 +52,10 @@ class PageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Page  $page
+     * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function edit(Page $page)
+    public function edit(Package $package)
     {
         //
     }
@@ -65,10 +64,10 @@ class PageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Page  $page
+     * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update(Request $request, Package $package)
     {
         //
     }
@@ -76,10 +75,10 @@ class PageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Page  $page
+     * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
+    public function destroy(Package $package)
     {
         //
     }
