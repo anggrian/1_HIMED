@@ -23,30 +23,31 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/login', [AuthController::class, 'getLogin'])->middleware('guest')->name('login');
 Route::post('/login', [AuthController::class, 'postLogin'])->middleware('guest');
-
 Route::get('/register', [AuthController::class, 'getRegister'])->middleware('guest')->name('register');
 Route::post('/register', [AuthController::class, 'postRegister'])->middleware('guest');
-
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
-
 Route::get('/home', [AuthController::class, 'index'])->middleware('auth')->name('home');
-
+// 
 
 use App\Http\Controllers\PageController;
 
-Route::resource('about', PageController::class);
+Route::resource('tentang', PageController::class);
+Route::get('layanan', [PageController::class, 'layanan'])->name('service');
+// 
 
+use App\Http\Controllers\FeatureController;
+
+Route::resource('fitur', FeatureController::class);
+// Route::get('/register', [AuthController::class, 'getRegister'])->middleware('guest')->name('register');
+Route::post('/fitur', [FeatureController::class, 'store'])->name('fitur');
+// 
+
+use App\Http\Controllers\PackageController;
+
+Route::resource('paket', PackageController::class);
+// 
 
 use App\Http\Controllers\AccountController;
 
 Route::resource('account', AccountController::class);
-
-
-use App\Http\Controllers\PackageController;
-
-Route::resource('package', PackageController::class);
-
-
-use App\Http\Controllers\FeatureController;
-
-Route::resource('feature', FeatureController::class);
+// 

@@ -49,12 +49,12 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Halaman <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ asset('about') }}">Tentang Himed</a></li>
-                      <li><a href="{{ asset('/layanan') }}">Layanan Himed</a></li>
+                      <li><a href="{{ asset('tentang') }}">Tentang Himed</a></li>
+                      <li><a href="{{ asset('layanan') }}">Layanan Himed</a></li>
                     </ul>
                   </li>
-                  <li><a href="{{ asset('feature') }}"><i class="fa fa-desktop"></i>Fitur Himed</a></li>
-                  <li><a href="{{ asset('package') }}"><i class="fa fa-bar-chart-o"></i>Paket Himed</a></li>
+                  <li><a href="{{ asset('fitur') }}"><i class="fa fa-desktop"></i>Fitur Himed</a></li>
+                  <li><a href="{{ asset('paket') }}"><i class="fa fa-bar-chart-o"></i>Paket Himed</a></li>
                   <li><a><i class="fa fa-laptop"></i>Blog <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ asset('/kategori') }}">Kategori </a></li>

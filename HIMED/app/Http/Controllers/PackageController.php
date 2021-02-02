@@ -14,7 +14,7 @@ class PackageController extends Controller
      */
     public function index()
     {
-        // return view('Backend_admin.Contents.Package.package_himed');
+        return view('Backend_admin.Contents.Package.package_himed');
     }
 
     /**

@@ -17,6 +17,10 @@ class PageController extends Controller
     {
         return view('Backend_admin.Contents.Page.about');
     }
+    public function layanan()
+    {
+        return view('Backend_admin.Contents.Page.service');
+    }
 
     /**
      * Show the form for creating a new resource.

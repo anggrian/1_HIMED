@@ -46,7 +46,7 @@
                                     </div>
                                 @endif
                             </div>
-                            <div>
+                            <div> 
                                 <input type="email" name="email" id="inputEmail" value="{{ old('email')}}" class="form-control {{ $errors->has('email')}}" placeholder="Email Address" required="" />
                                 @if ($errors->has('email'))
                                     <div class="invalid-feedback">

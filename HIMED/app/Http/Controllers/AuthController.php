@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 
 class AuthController extends Controller
@@ -12,7 +13,10 @@ class AuthController extends Controller
     {
 
         // return view('Backend_admin.Layout.layout');
-        return view('Backend_admin.Layout.dashboard');
+        if (Auth::check()) {
+            return view('Backend_admin.Layout.dashboard');
+        }
+        return redirect()->route('login');
     }
 
     public function getLogin()
@@ -21,10 +25,10 @@ class AuthController extends Controller
     }
     public function postLogin(Request $request)
     {
-        if (Auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->back();
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect()->route('home');
         }
-        return redirect()->route('home');
+        return redirect('login')->with('danger', 'Username atau Password Salah!');
     }
 
     public function getRegister()
@@ -50,7 +54,7 @@ class AuthController extends Controller
 
     public function logout()
     {
-        Auth()->logout();
+        Auth::logout();
 
         return redirect()->route('login');
     }

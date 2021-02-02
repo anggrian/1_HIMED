@@ -38,14 +38,18 @@
             <div class="login_wrapper">
                 <div class="animate form login_form">
                     <section class="login_content">
+                        
                         <form method="POST" action="{{ route ('login')}}">
                             {{ csrf_field() }}
                             <h1>Form Login </h1>
+                            @if($pesan = Session::get('danger'))
+                            <div class="alert alert-danger">{{ $pesan }}</div>
+                            @endif
                             <div>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Username" required="" />
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Username" required/>
                             </div>
                             <div>
-                                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="" />
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required/>
                             </div>
                             
                             <div>

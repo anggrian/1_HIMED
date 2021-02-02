@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Feature;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Flight;
 
 class FeatureController extends Controller
 {
@@ -14,7 +16,9 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        return view('Backend_admin.Contents.Feature.feature_himed');
+        $fitur = DB::table('features')->get();
+
+        return view('Backend_admin.Contents.Feature.feature_himed', ['features' => $fitur]);
     }
 
     /**
@@ -35,7 +39,12 @@ class FeatureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('features')->insert([
+            'main_title' => $request->main_title,
+            'main_description' => $request->main_description,
+            'thumbnail' => $request->thumbnail
+        ]);
+        return redirect('fitur');
     }
 
     /**
