@@ -22,7 +22,7 @@
             </div>
             <div class="x_content">
               <br />
-              <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('fitur')}}">
+              <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{{ route('fitur')}}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="item form-group">
                   <label class="col-form-label col-md-3 col-sm-3 label-align" for="main_title">Judul Utama<span class="required">*</span></label>
@@ -38,7 +38,7 @@
                 </div>
                 </div>
                 <div class="item form-group">
-                  <label for="thumbnail" class="col-form-label col-md-3 col-sm-3 label-align">Gambar</label>
+                  <label for="thumbnail" class="col-form-label col-md-3 col-sm-3 label-align">Pilih Gambar</label>
                   <div class="col-md-6 col-sm-6 ">
                     <input id="thumbnail" class="form-control" type="file" name="thumbnail">
                   </div>
@@ -77,7 +77,7 @@
               <table class="table">
                 <thead>                      
                   <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">No</th>
                     <th scope="col">Judul Utama</th>
                     <th scope="col">Descripsi Utama</th>
                     <th scope="col">Gambar</th>
@@ -90,7 +90,7 @@
                     <th scope="row">{{ $loop->iteration}}</th>
                     <td>{{ $fitur->main_title}}</td>
                     <td>{{ $fitur->main_description}}</td>
-                    <td>{{ $fitur->thumbnail}}</td>
+                    <td><img src="assets/uploads/{{ $fitur->thumbnail}}" width="50" alt=""></td>
                     <td>
                       <a href="" class="badge badge-success">edit</a>
                     </td>

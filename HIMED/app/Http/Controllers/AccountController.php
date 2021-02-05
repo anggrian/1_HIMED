@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AccountController extends Controller
 {
@@ -14,8 +16,15 @@ class AccountController extends Controller
      */
     public function index()
     {
+        $fitur = DB::table('users')->get();
+
+        return view('Backend_admin.Contents.Account.profile', ['user' => $fitur]);
+        // return view('Backend_admin.Contents.Account.account_data');
+    }
+    public function account()
+    {
+
         return view('Backend_admin.Contents.Account.account_data');
-        // return view('Backend_admin.Layout.dashboard');
     }
 
     /**
@@ -45,9 +54,11 @@ class AccountController extends Controller
      * @param  \App\Models\Account  $account
      * @return \Illuminate\Http\Response
      */
-    public function show(Account $account)
+    public function show($id)
     {
-        //
+        return view('Backend_admin.Contents.Account.profile', [
+            'user' => User::findOrFail($id)
+        ]);
     }
 
     /**

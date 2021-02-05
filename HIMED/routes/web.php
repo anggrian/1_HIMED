@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Frontend.index');
-});
+// Route::get('/', function () {
+//     return view('Frontend.index');
+// });
+Route::get('/', [HomeController::class, 'index'])->name('page');
 
+// Route::resource('/', HomeController::class);
 
 // Route For Login & Register
 use App\Http\Controllers\AuthController;
@@ -40,6 +43,7 @@ use App\Http\Controllers\FeatureController;
 Route::resource('fitur', FeatureController::class);
 // Route::get('/register', [AuthController::class, 'getRegister'])->middleware('guest')->name('register');
 Route::post('/fitur', [FeatureController::class, 'store'])->name('fitur');
+
 // 
 
 use App\Http\Controllers\PackageController;
@@ -49,5 +53,5 @@ Route::resource('paket', PackageController::class);
 
 use App\Http\Controllers\AccountController;
 
-Route::resource('account', AccountController::class);
-// 
+Route::resource('akun', AccountController::class);
+// Route::get('akun', [PageController::class, 'layanan'])->name('service');
