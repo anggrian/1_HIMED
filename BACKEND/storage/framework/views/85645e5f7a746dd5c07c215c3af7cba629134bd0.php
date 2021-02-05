@@ -1,0 +1,2 @@
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<link rel="stylesheet" href="http://localhost/template-himed-final/css/style.css"><?php /**PATH C:\xampp\htdocs\1_HIMED\BACKEND\resources\views/web/page_header.blade.php ENDPATH**/ ?>
