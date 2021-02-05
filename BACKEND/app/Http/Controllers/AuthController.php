@@ -5,33 +5,38 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
+
 class AuthController extends Controller
 {
-    public function getLogin()
+    public function index()
     {
-        return view('login');
+
+        // return view('Backend_admin.Layout.layout');
+        return view('Backend_admin.Layout.dashboard');
     }
 
+    public function getLogin()
+    {
+        return view('Backend_admin.User_admin.login');
+    }
     public function postLogin(Request $request)
     {
-        if (!auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (Auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->back();
         }
-
         return redirect()->route('home');
     }
 
     public function getRegister()
     {
-        return view('page/register');
+        return view('Backend_admin.User_admin.register');
     }
-
     public function postRegister(Request $request)
     {
         $this->validate($request, [
             'name'  => 'required|min:4',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed' // field_confirmation
+            'password' => 'required|min:6' // field_confirmation
         ]);
 
         User::create([
@@ -41,13 +46,11 @@ class AuthController extends Controller
         ]);
 
         return redirect()->back();
-
-        // return redirect()->route('login');    /untuk menampilkan ke route dengan name(login)
     }
 
     public function logout()
     {
-        auth()->logout();
+        Auth()->logout();
 
         return redirect()->route('login');
     }

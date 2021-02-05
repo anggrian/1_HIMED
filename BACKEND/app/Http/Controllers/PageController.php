@@ -12,10 +12,10 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-
-        return view('page/halaman');
+        return view('Backend_admin.Contents.Page.about');
     }
 
     /**

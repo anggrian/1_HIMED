@@ -12,37 +12,41 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route bawaan 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('web/index');
 });
 
-// Route Auth
+
+// Route For Login & Register
 use App\Http\Controllers\AuthController;
-// Route For Login
+
 Route::get('/login', [AuthController::class, 'getLogin'])->middleware('guest')->name('login');
 Route::post('/login', [AuthController::class, 'postLogin'])->middleware('guest');
 
 Route::get('/register', [AuthController::class, 'getRegister'])->middleware('guest')->name('register');
 Route::post('/register', [AuthController::class, 'postRegister'])->middleware('guest');
-// Route for Landing page first
+
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
+
+Route::get('/home', [AuthController::class, 'index'])->middleware('auth')->name('home');
+
 
 use App\Http\Controllers\PageController;
 
-Route::get('/home', [PageController::class, 'index'])->middleware('auth')->name('home');
+Route::resource('about', PageController::class);
 
-Route::resource('halaman', PageController::class);
-// Route Halaman
 
-// Route Fitur
-use App\Http\Controllers\FiturController;
+use App\Http\Controllers\AccountController;
 
-Route::resource('fitur', FiturController::class);
+Route::resource('account', AccountController::class);
 
-// Route Akun
-use App\Http\Controllers\AkunController;
 
-Route::resource('akun', AkunController::class);
-// Route::resource('account', AkunController::class);
-// Route::get('/account', [AkunController::class, 'account']);
+use App\Http\Controllers\PackageController;
+
+Route::resource('package', PackageController::class);
+
+
+use App\Http\Controllers\FeatureController;
+
+Route::resource('feature', FeatureController::class);
