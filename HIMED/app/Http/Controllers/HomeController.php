@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Feature;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Flight;
 
-class FeatureController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,9 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        $fitur = DB::table('features')->get();
+        $fitur = DB::table('features')->first();
 
-        return view('Backend_admin.Contents.Feature.feature_himed', ['features' => $fitur]);
+        return view('Frontend.index', ['features' => $fitur]);
     }
 
     /**
@@ -39,29 +37,16 @@ class FeatureController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('thumbnail')) {
-            $thumbnail = $request->file('thumbnail');
-            $tujuan_upload = 'assets/uploads/';
-            $nama_file = time() . "." . $thumbnail->getClientOriginalExtension();
-            $thumbnail->move($tujuan_upload, $nama_file);
-            DB::table('features')->insert([
-                'main_title' => $request->main_title,
-                'main_description' => $request->main_description,
-                'thumbnail' => $nama_file
-            ]);
-            // dd($request->all());
-        }
-
-        return redirect('fitur');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Feature $feature)
+    public function show($id)
     {
         //
     }
@@ -69,10 +54,10 @@ class FeatureController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Feature $feature)
+    public function edit($id)
     {
         //
     }
@@ -81,10 +66,10 @@ class FeatureController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Feature  $feature
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Feature $feature)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -92,10 +77,10 @@ class FeatureController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Feature $feature)
+    public function destroy($id)
     {
         //
     }

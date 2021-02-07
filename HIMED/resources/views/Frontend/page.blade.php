@@ -52,17 +52,16 @@
     <section class="bub-right">
         <div class="container container-result">
             <div class="result">
-                <h4>A Straight Forward Structare for Powerful Results.</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at dictum risus, non suscipit arcu. Quisque aliquam posuere tortor, sit amet convallis nunc scelerisque in.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quo laboriosam, dolorum ducimus aliquam consequuntur!</p>
+                <h4>{{$features->main_title}}</h4>
+                <p>{{$features->main_description}}</p>
                 <button class="btn btn-primary">READ MORE</button>
             </div>
             <div class="img-result">
-                <img src="{{ asset('style_frontend/img/about-us.png')}}" alt="" class="gambar-result">
+                <img src="assets/uploads/{{ $features->thumbnail}}" alt="" class="gambar-result">
             </div>
         </div>
     </section>
-    <!-- 3. Akhir Section  A Straight Forward -->
+    <!-- / 3. Akhir Section  A Straight Forward -->
 
     <!-- 4. Awal Section  How it works-->
     <section class="hex-pat-1">

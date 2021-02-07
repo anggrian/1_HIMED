@@ -99,12 +99,12 @@
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                     <img src="{{ asset('gentelella/production/images/img.jpg') }}" alt="">Account
                   </a>
-                  {{-- <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  href="{{ route('akun.show', auth()->user()->id)}}">Profile</a>
-                    <a class="dropdown-item"  href="{{ route('akun.index')}}">Data Account</a>
-                    <a class="dropdown-item"  href="{{ route('akun.index')}}">Register</a>
+                    {{-- <a class="dropdown-item"  href="{{ route('akun')}}">Data Account</a>
+                    <a class="dropdown-item"  href="{{ route('akun')}}">Register</a> --}}
                     <a class="dropdown-item"  href="{{ route('logout')}}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-                  </div> --}}
+                  </div>
                 </li>
 
               </ul>
