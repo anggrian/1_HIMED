@@ -19,6 +19,7 @@ class PageController extends Controller
     }
     public function layanan()
     {
+
         return view('Backend_admin.Contents.Page.service');
     }
 
@@ -40,7 +41,10 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $tentang = Page::create([
+            'name' => 'London to Paris',
+        ]);
     }
 
     /**

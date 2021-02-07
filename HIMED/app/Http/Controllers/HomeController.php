@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Feature;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,7 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $fitur = DB::table('features')->first();
+        $fitur = Feature::first(); //untuk menampilkan data dari yang awal
+        // $fitur = DB::table('features')->latest('id')->first();  //untuk menampilkan data dari yang akhir
 
         return view('Frontend.index', ['features' => $fitur]);
     }

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Package;
+use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class PackageController extends Controller
+class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class PackageController extends Controller
      */
     public function index()
     {
-        return view('Backend_admin.Contents.Package.package_himed');
+        $layanan = DB::table('services')->get();
+        return view('Backend_admin.Contents.Page.service', ['services' => $layanan]);
     }
 
     /**
@@ -35,16 +37,20 @@ class PackageController extends Controller
      */
     public function store(Request $request)
     {
-        // 
+        DB::table('services')->insert([
+            'title_service' => $request->title_service,
+            'description_service' => $request->description_service
+        ]);
+        return redirect('layanan');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Package  $package
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Package $package)
+    public function show(Service $service)
     {
         //
     }
@@ -52,10 +58,10 @@ class PackageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Package  $package
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Package $package)
+    public function edit(Service $service)
     {
         //
     }
@@ -64,10 +70,10 @@ class PackageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Package  $package
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Package $package)
+    public function update(Request $request, Service $service)
     {
         //
     }
@@ -75,11 +81,13 @@ class PackageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Package  $package
+     * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Package $package)
+    public function destroy($service)
     {
-        //
+        $layanan = Service::find($service);
+        $layanan->delete();
+        return redirect('layanan');
     }
 }

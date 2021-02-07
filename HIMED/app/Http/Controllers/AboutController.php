@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Feature;
+use App\Models\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Flight;
 
-class FeatureController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,8 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        $fitur = DB::table('features')->get();
-
-        return view('Backend_admin.Contents.Feature.feature_himed', ['features' => $fitur]);
+        $tentang = DB::table('abouts')->get();
+        return view('Backend_admin.Contents.Page.about', ['abouts' => $tentang]);
     }
 
     /**
@@ -39,29 +37,29 @@ class FeatureController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('thumbnail')) {
-            $thumbnail = $request->file('thumbnail');
+        if ($request->hasFile('img_about')) {
+            $img_about = $request->file('img_about');
             $tujuan_upload = 'assets/uploads/';
-            $nama_file = time() . "." . $thumbnail->getClientOriginalExtension();
-            $thumbnail->move($tujuan_upload, $nama_file);
-            DB::table('features')->insert([
-                'main_title' => $request->main_title,
-                'main_description' => $request->main_description,
-                'thumbnail' => $nama_file
+            $nama_file = time() . "." . $img_about->getClientOriginalExtension();
+            $img_about->move($tujuan_upload, $nama_file);
+            DB::table('abouts')->insert([
+                'title_about' => $request->title_about,
+                'description_about' => $request->description_about,
+                'img_about' => $nama_file
             ]);
             // dd($request->all());
         }
 
-        return redirect('fitur');
+        return redirect(route('tentang'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function show(Feature $feature)
+    public function show(About $about)
     {
         //
     }
@@ -69,10 +67,10 @@ class FeatureController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(Feature $feature)
+    public function edit(About $about)
     {
         //
     }
@@ -81,10 +79,10 @@ class FeatureController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Feature $feature)
+    public function update(Request $request, About $about)
     {
         //
     }
@@ -92,14 +90,14 @@ class FeatureController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Feature  $feature
+     * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy($feature)
+    public function destroy($about)
     {
+        $tentang = About::find($about);
 
-        $fitur = Feature::find($feature);
-        $fitur->delete();
-        return redirect('fitur');
+        $tentang->delete();
+        return redirect('tentang');
     }
 }

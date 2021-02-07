@@ -46,10 +46,7 @@
                 <div class="ln_solid"></div>
                 <div class="item form-group">
                   <div class="col-md-6 col-sm-6 offset-md-3">
-                    <button class="btn btn-primary" type="button">Cancel</button>
-                    <button class="btn btn-primary" type="reset">Reset</button>
-                    <button type="submit" class="btn btn-success"  >Submit</button>
-                    
+                    <button type="submit" class="btn btn-success"  ><i class="fa fa-send"> submit</i></button>
                   </div>
                 </div>
               </form>
@@ -92,7 +89,13 @@
                     <td>{{ $fitur->main_description}}</td>
                     <td><img src="assets/uploads/{{ $fitur->thumbnail}}" width="50" alt=""></td>
                     <td>
-                      <a href="" class="badge badge-success">edit</a>
+                      <a href="" class="badge badge-success"><i class="fa fa-edit"></i></a> 
+
+                      <form action="{{ route('delete_fitur',  $fitur->id) }}" method="POST" class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <button href="" class="btn btn-sm btn-danger"><i class="fa fa-trash" ></i></button>
+                      </form>
                     </td>
                   </tr>
                   @endforeach
