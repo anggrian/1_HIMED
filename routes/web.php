@@ -14,14 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('Frontend.index');
-// });
 Route::get('/', [HomeController::class, 'index'])->name('page');
 
-// Route::resource('/', HomeController::class);
-
-// Route For Login & Register
+// Login & Register
 use App\Http\Controllers\AuthController;
 
 Route::get('/login', [AuthController::class, 'getLogin'])->middleware('guest')->name('login');
@@ -30,18 +25,11 @@ Route::get('/register', [AuthController::class, 'getRegister'])->middleware('gue
 Route::post('/register', [AuthController::class, 'postRegister'])->middleware('guest');
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 Route::get('/home', [AuthController::class, 'index'])->middleware('auth')->name('home');
-// 
 
-use App\Http\Controllers\PageController;
-
-//Route::resource('tentang', PageController::class);
-Route::get('layanan', [PageController::class, 'layanan'])->name('service');
-// 
 
 use App\Http\Controllers\FeatureController;
 
 Route::resource('fitur', FeatureController::class);
-// Route::get('/register', [AuthController::class, 'getRegister'])->middleware('guest')->name('register');
 Route::post('/fitur', [FeatureController::class, 'store'])->name('fitur');
 Route::delete('fitur/{fitur}', [FeatureController::class, 'destroy'])->name('delete_fitur');
 Route::patch('fitur/{fitur}', [FeatureController::class, 'update']);
@@ -51,13 +39,12 @@ use App\Http\Controllers\PackageController;
 
 Route::resource('paket', PackageController::class);
 Route::post('paket', [PackageController::class, 'store'])->name('paket');
-// 
+
 
 use App\Http\Controllers\AccountController;
 
 Route::resource('akun', AccountController::class);
-// Route::get('akun', [PageController::class, 'layanan'])->name('service');
-
+Route::post('akun', [AccountController::class, 'account'])->name('akun');
 
 
 // tentang
@@ -72,8 +59,8 @@ Route::delete('tentang/{tentang}', [AboutController::class, 'destroy'])->name('d
 // layanan
 use App\Http\Controllers\ServiceController;
 
-Route::post('layanan', [ServiceController::class, 'store'])->name('layanan');
 Route::get('layanan', [ServiceController::class, 'index'])->name('layanan');
+Route::post('layanan', [ServiceController::class, 'store'])->name('layanan');
 Route::delete('layanan/{layanan}', [ServiceController::class, 'destroy'])->name('delete');
 
 // Haspan
@@ -109,3 +96,10 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::resource('/post', PostController::class);
 // 	Route::resource('/user', 'UserController');
 });
+
+
+
+// profil
+use App\Http\Controllers\ProfileController;
+
+Route::get('profil', [ProfileController::class, 'index'])->name('profil');

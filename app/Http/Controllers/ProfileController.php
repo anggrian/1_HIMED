@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Account;
-use App\Models\User;
+use App\Models\Profile;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class AccountController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,15 +14,7 @@ class AccountController extends Controller
      */
     public function index()
     {
-        $fitur = DB::table('users')->get();
-
-        // return view('Backend_admin.Contents.Account.profile', ['users' => $fitur]);
-        return view('Backend_admin.Contents.Account.account_data');
-    }
-    public function account()
-    {
-
-        return view('Backend_admin.Contents.Account.account_data');
+        return view('Backend_admin.Contents.Account.profile');
     }
 
     /**
@@ -51,23 +41,21 @@ class AccountController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Account  $account
+     * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Profile $profile)
     {
-        return view('Backend_admin.Contents.Account.profile', [
-            'user' => User::findOrFail($id)
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Account  $account
+     * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function edit(Account $account)
+    public function edit(Profile $profile)
     {
         //
     }
@@ -76,10 +64,10 @@ class AccountController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Account  $account
+     * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Account $account)
+    public function update(Request $request, Profile $profile)
     {
         //
     }
@@ -87,10 +75,10 @@ class AccountController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Account  $account
+     * @param  \App\Models\Profile  $profile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Account $account)
+    public function destroy(Profile $profile)
     {
         //
     }
