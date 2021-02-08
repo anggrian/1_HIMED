@@ -25,7 +25,7 @@
         <li><a href="#">ABOUT US</a></li>
         <li><a href="#">SERVICES</a></li>
         <li><a href="#">FAQ</a></li>
-        <li><a href="#">BLOG</a></li>
+        <li><a href="/blog">BLOG</a></li>
         <li><a href="#">CONTACT</a></li>
         <button class="btn-primary"> Register </button>
       </ul>

@@ -12,7 +12,7 @@
         <li><a href="#">ABOUT US</a></li>
         <li><a href="#">SERVICES</a></li>
         <li><a href="#">FAQ</a></li>
-        <li><a href="#">BLOG</a></li>
+        <li><a href="blog">BLOG</a></li>
         <li><a href="#">CONTACT</a></li>
       </ul>
       <div class="icon menu-btn">

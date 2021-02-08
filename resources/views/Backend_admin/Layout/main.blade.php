@@ -57,9 +57,9 @@
                   <li><a href="{{ asset('paket') }}"><i class="fa fa-bar-chart-o"></i>Paket Himed</a></li>
                   <li><a><i class="fa fa-laptop"></i>Blog <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ asset('/kategori') }}">Kategori </a></li>
-                      <li><a href="{{ asset('/artikel') }}">Artikel </a></li>
-                      <li><a href="{{ asset('/berita') }}">Berita </a></li>
+                      <li><a href="{{ asset('/post') }}">Post </a></li>
+                      <li><a href="{{ asset('/category') }}">Kategori </a></li>
+                      <li><a href="{{ asset('/tag') }}">tag </a></li>
                       <li><a href="{{ asset('/komentar') }}">Komentar </a></li>
                     </ul>
                   </li>
