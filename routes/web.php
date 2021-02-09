@@ -60,24 +60,25 @@ Route::get('profil', [ProfileController::class, 'index'])->name('profil');
 
 // Haspan
 // Auth::routes();
-// use App\Http\Controllers\BlogController;
-// use App\Http\Controllers\CategoryController;
-// use App\Http\Controllers\TagController;
-// use App\Http\Controllers\PostController;
 
-// Route::get('/blog', [BlogController::class, 'index']);
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\PostController;
 
-// Route::get('/isi-post/{slug}', [BlogController::class, 'isi_blog'])->name('blog.isi');
-// Route::get('/list-post', 'BlogController@list_blog')->name('blog.list');
-// Route::get('/list-category/{category}', 'BlogController@list_category')->name('blog.category');
-// Route::get('/cari', 'BlogController@cari')->name('blog.cari');
+Route::get('/blog', [BlogController::class, 'index']);
 
-// Route::group(['middleware' => 'auth'], function () {
-// 	Route::resource('/category', CategoryController::class);
-// 	Route::resource('/tag', TagController::class);
+Route::get('/isi-post/{slug}', [BlogController::class, 'isi_blog'])->name('blog.isi');
+Route::get('/list-post', 'BlogController@list_blog')->name('blog.list');
+Route::get('/list-category/{category}', 'BlogController@list_category')->name('blog.category');
+Route::get('/cari', 'BlogController@cari')->name('blog.cari');
 
-// 	Route::get('/post/tampil_hapus', 'PostController@tampil_hapus')->name('post.tampil_hapus');
-// 	Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');
-// 	Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
-// 	Route::resource('/post', PostController::class);
-// });
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('/category', CategoryController::class);
+    Route::resource('/tag', TagController::class);
+
+    Route::get('/post/tampil_hapus', 'PostController@tampil_hapus')->name('post.tampil_hapus');
+    Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');
+    Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
+    Route::resource('/post', PostController::class);
+});

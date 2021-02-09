@@ -86,34 +86,32 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        // DB::table('abouts')->update([
-        //     'title_about' => $request->title_about,
-        //     'description_about' => $request->description_about
-        // ])->where($request->id);
-        $data = About::find($request->id);
-        if ($request->hasFile('img_about')) {
-            $foto = $request->file('img_about');
-            $tujuan_upload = 'assets/uploads/';
-            $nama_file = time() . "." . $foto->getClientOriginalExtension();
-            $foto->move($tujuan_upload, $nama_file);
+        DB::table('abouts')->where('id', $request->id)->update([
+            'title_about' => $request->title_about,
+            'description_about' => $request->description_about
+        ]);
 
-            $input = [
-                'title_about' => $request->title_about,
-                'description_about' => $request->description_about,
-                'img_about' => $nama_file
-            ];
-        } else {
-            $input = [
-                'title_about' => $request->title_about,
-                'description_about' => $request->description_about,
-                'img_about' => null
-            ];
-        }
 
-        $action = $data->update($input);
-
+        // $data = About::find($request->id);
+        // if ($request->hasFile('img_about')) {
+        //     $foto = $request->file('img_about');
+        //     $tujuan_upload = 'assets/uploads/';
+        //     $nama_file = time() . "." . $foto->getClientOriginalExtension();
+        //     $foto->move($tujuan_upload, $nama_file);
+        //     $input = [
+        //         'title_about' => $request->title_about,
+        //         'description_about' => $request->description_about,
+        //         'img_about' => $nama_file
+        //     ];
+        // } else {
+        //     $input = [
+        //         'title_about' => $request->title_about,
+        //         'description_about' => $request->description_about,
+        //         'img_about' => null
+        //     ];
+        // }
+        // $action = $data->update($input);
         // if($action) {
-
         // }
         return redirect('tentang');
     }

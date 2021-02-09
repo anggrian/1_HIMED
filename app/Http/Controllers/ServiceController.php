@@ -76,7 +76,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        DB::table('services')->update([
+        DB::table('services')->where('id', $request->id)->update([
             'title_service' => $request->title_service,
             'description_service' => $request->description_service
         ]);
