@@ -1,30 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
-
-=======
-use App\Http\Controllers\HomeController;    // home
-use App\Http\Controllers\AuthController;    // Login & Register
-use App\Http\Controllers\ProfileController; // Profile	| profil
-use App\Http\Controllers\ServiceController; // Service	| layanan
-use App\Http\Controllers\AboutController;    // About	| tentang
-use App\Http\Controllers\AccountController;    // Account	| akun
-use App\Http\Controllers\PackageController;    // Package	| paket
-use App\Http\Controllers\FeatureController;    // Feature	| fitur
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-//home
->>>>>>> 510cf8f9c454c4a278906cb7f7fa020e65121844
 Route::get('/', [HomeController::class, 'index'])->name('page');
 Route::get('index', [HomeController::class, 'index'])->name('index');
 // Login & Register
@@ -62,19 +38,12 @@ Route::get('profil', [ProfileController::class, 'index'])->name('profil');
 
 
 
-<<<<<<< HEAD
-=======
-// Haspan
-// Auth::routes();
-
->>>>>>> 510cf8f9c454c4a278906cb7f7fa020e65121844
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\PostController;
 
 Route::get('/blog', [BlogController::class, 'index']);
-<<<<<<< HEAD
 
 Route::get('/isi-post/{slug}', [BlogController::class, 'isi_blog'])->name('blog.isi');
 Route::get('/list-post','BlogController@list_blog')->name('blog.list');
@@ -89,7 +58,6 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');
 	Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
 	Route::resource('/post', PostController::class);
-=======
 
 Route::get('/isi-post/{slug}', [BlogController::class, 'isi_blog'])->name('blog.isi');
 Route::get('/list-post', 'BlogController@list_blog')->name('blog.list');
@@ -104,5 +72,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');
     Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
     Route::resource('/post', PostController::class);
->>>>>>> 510cf8f9c454c4a278906cb7f7fa020e65121844
 });
