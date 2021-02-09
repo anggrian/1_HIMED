@@ -72,11 +72,15 @@ class AboutController extends Controller
      */
     public function edit(Request $request)
     {
-        // $tentang = About::find($request->id);
-        $tentang = About::where('id', $request->id)->first();
-        return view('Backend_admin.Contents.Page.about_edit', compact('tentang'));
+        $layanan = About::findorfail($id);
+        return view('Backend_admin.Contents.Page.service_edit', ['services' => $layanan]);
     }
 
+    // {
+    //     // $tentang = About::find($request->id);
+    //     $tentang = About::where('id', $request->id)->first();
+    //     return view('Backend_admin.Contents.Page.about_edit', compact('tentang'));
+    // }
     /**
      * Update the specified resource in storage.
      *
