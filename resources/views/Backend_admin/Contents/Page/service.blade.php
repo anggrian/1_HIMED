@@ -81,12 +81,12 @@
                     <td>{{ $layanan->title_service}}</td>
                     <td>{{ $layanan->description_service}}</td>
                     <td>
-                      <a href="" class="badge badge-success"><i class="fa fa-edit"></i></a> 
+                      <a href="{{ route('layanan.edit',  $layanan->id) }}" class="btn btn-link text-success p-0" style="font-size: 20px;"> <i class="fa fa-edit"></i></a> 
 
-                      <form action="{{ route('delete',  $layanan->id) }}" method="POST" class="d-inline">
+                      <form action="{{ route('layanan.delete',  $layanan->id) }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
-                        <button href="" class="badge badge-danger">delet<i class="fa fa-trash" ></i></button>
+                        <button href="" class="btn btn-link text-danger p-0" style="font-size: 20px;"><i class="fa fa-trash" ></i></button>
                       </form>
                     </td>
                   </tr>
@@ -101,4 +101,4 @@
     </div>
 </div>
 
-@endsection
+@endsection 

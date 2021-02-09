@@ -8,7 +8,7 @@
         <div class="icon cancel-btn">
           <i class="fas fa-times"></i>
         </div>
-        <li><a href="#">HOME</a></li>
+        <li><a href="{{ route('index')}}">HOME</a></li>
         <li><a href="#">ABOUT US</a></li>
         <li><a href="#">SERVICES</a></li>
         <li><a href="#">FAQ</a></li>

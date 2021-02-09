@@ -70,9 +70,11 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit(Request $request)
     {
-        //
+        // $tentang = About::find($request->id);
+        $tentang = About::where('id', $request->id)->first();
+        return view('Backend_admin.Contents.Page.about_edit', compact('tentang'));
     }
 
     /**
@@ -84,7 +86,36 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        //
+        // DB::table('abouts')->update([
+        //     'title_about' => $request->title_about,
+        //     'description_about' => $request->description_about
+        // ])->where($request->id);
+        $data = About::find($request->id);
+        if ($request->hasFile('img_about')) {
+            $foto = $request->file('img_about');
+            $tujuan_upload = 'assets/uploads/';
+            $nama_file = time() . "." . $foto->getClientOriginalExtension();
+            $foto->move($tujuan_upload, $nama_file);
+
+            $input = [
+                'title_about' => $request->title_about,
+                'description_about' => $request->description_about,
+                'img_about' => $nama_file
+            ];
+        } else {
+            $input = [
+                'title_about' => $request->title_about,
+                'description_about' => $request->description_about,
+                'img_about' => null
+            ];
+        }
+
+        $action = $data->update($input);
+
+        // if($action) {
+
+        // }
+        return redirect('tentang');
     }
 
     /**
@@ -96,7 +127,6 @@ class AboutController extends Controller
     public function destroy($about)
     {
         $tentang = About::find($about);
-
         $tentang->delete();
         return redirect('tentang');
     }

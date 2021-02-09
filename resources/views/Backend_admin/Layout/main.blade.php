@@ -28,6 +28,10 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('gentelella/build/css/custom.min.css') }}" rel="stylesheet">
+
+    {{-- CK EDITOR --}}
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+    
   </head>
 
   <body class="nav-md">

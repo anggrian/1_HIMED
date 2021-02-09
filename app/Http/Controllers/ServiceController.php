@@ -61,9 +61,10 @@ class ServiceController extends Controller
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit($id)
     {
-        //
+        $layanan = Service::findorfail($id);
+        return view('Backend_admin.Contents.Page.service_edit', ['services' => $layanan]);
     }
 
     /**
@@ -75,7 +76,11 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        //
+        DB::table('services')->update([
+            'title_service' => $request->title_service,
+            'description_service' => $request->description_service
+        ]);
+        return redirect('layanan');
     }
 
     /**
