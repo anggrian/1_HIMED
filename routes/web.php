@@ -1,6 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;    // home
+use App\Http\Controllers\AuthController;    // Login & Register
+use App\Http\Controllers\ProfileController; // Profile	| profil
+use App\Http\Controllers\ServiceController; // Service	| layanan
+use App\Http\Controllers\AboutController;    // About	| tentang
+use App\Http\Controllers\AccountController;    // Account	| akun
+use App\Http\Controllers\PackageController;    // Package	| paket
+use App\Http\Controllers\FeatureController;    // Feature	| fitur
+
+//home
 Route::get('/', [HomeController::class, 'index'])->name('page');
 Route::get('index', [HomeController::class, 'index'])->name('index');
 // Login & Register
@@ -38,26 +48,15 @@ Route::get('profil', [ProfileController::class, 'index'])->name('profil');
 
 
 
+// Haspan
+// Auth::routes();
+
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\PostController;
 
 Route::get('/blog', [BlogController::class, 'index']);
-
-Route::get('/isi-post/{slug}', [BlogController::class, 'isi_blog'])->name('blog.isi');
-Route::get('/list-post','BlogController@list_blog')->name('blog.list');
-Route::get('/list-category/{category}','BlogController@list_category')->name('blog.category');
-Route::get('/cari','BlogController@cari')->name('blog.cari');
-
-Route::group(['middleware' => 'auth'], function(){
-	Route::resource('/category', CategoryController::class);
-	Route::resource('/tag', TagController::class);
-
-	Route::get('/post/tampil_hapus', 'PostController@tampil_hapus')->name('post.tampil_hapus');
-	Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');
-	Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
-	Route::resource('/post', PostController::class);
 
 Route::get('/isi-post/{slug}', [BlogController::class, 'isi_blog'])->name('blog.isi');
 Route::get('/list-post', 'BlogController@list_blog')->name('blog.list');
