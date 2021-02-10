@@ -72,9 +72,11 @@ class FeatureController extends Controller
      * @param  \App\Models\Feature  $feature
      * @return \Illuminate\Http\Response
      */
-    public function edit(Feature $feature)
+    public function edit($id)
     {
-        //
+        $fitur = Feature::findorfail($id);
+
+        return view('Backend_admin.Contents.Feature.feature_edit', ['features' => $fitur]);
     }
 
     /**
@@ -86,7 +88,18 @@ class FeatureController extends Controller
      */
     public function update(Request $request, Feature $feature)
     {
-        //
+        if ($request->hasFile('thumbnail')) {
+            $thumbnail = $request->file('thumbnail');
+            $tujuan_upload = 'assets/uploads/';
+            $nama_file = time() . "." . $thumbnail->getClientOriginalExtension();
+            $thumbnail->move($tujuan_upload, $nama_file);
+            DB::table('features')->where('id', $request->id)->update([
+                'main_title' => $request->main_title,
+                'main_description' => $request->main_description,
+                'thumbnail' => $nama_file
+            ]);
+        }
+        return redirect('fitur');
     }
 
     /**

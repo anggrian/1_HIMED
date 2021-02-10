@@ -4,7 +4,7 @@
 
 @section('container')
     
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-3">
     <div class="">
       <div class="clearfix"></div>
       <div class="row">
@@ -34,7 +34,10 @@
                   <label class="col-form-label col-md-3 col-sm-3 label-align" for="main_description">Deskripsi Utama<span class="required">*</span>
                   </label>
                   <div class="col-md-6 col-sm-6 ">
-                    <textarea class="form-control" rows="3"  name="main_description" id="main_description"></textarea>thumbnail
+                    <textarea class="form-control" rows="3"  name="main_description" id="main_description"></textarea>
+                    <script>
+                      CKEDITOR.replace( 'main_description' );
+                    </script>
                 </div>
                 </div>
                 <div class="item form-group">
@@ -86,16 +89,16 @@
                   <tr>
                     <th scope="row">{{ $loop->iteration}}</th>
                     <td>{{ $fitur->main_title}}</td>
-                    <td>{{ $fitur->main_description}}</td>
+                    <td>{{ strip_tags($fitur->main_description)}}</td>
                     <td><img src="assets/uploads/{{ $fitur->thumbnail}}" width="50" alt=""></td>
                     <td>
-                      <a href="" class="badge badge-success"><i class="fa fa-edit"></i></a> 
-
+                      <a href="{{ route('fitur.edit', $fitur->id) }}" class="btn btn-link text-success p-0" style="font-size: 20px;"> <i class="fa fa-edit"></i></a> 
                       <form action="{{ route('delete_fitur',  $fitur->id) }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
-                        <button href="" class="btn btn-sm btn-danger"><i class="fa fa-trash" ></i></button>
+                        <button href="" class="btn btn-link text-danger p-0" style="font-size: 20px;"><i class="fa fa-trash" ></i></button>
                       </form>
+                      <input type="hidden" value="{{ $fitur->id }}" name="id">
                     </td>
                   </tr>
                   @endforeach

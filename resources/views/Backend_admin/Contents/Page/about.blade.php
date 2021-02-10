@@ -4,7 +4,7 @@
 
 @section('container')
     
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-3">
     <div class="">
       <div class="clearfix"></div>
       <div class="row">
@@ -89,10 +89,10 @@
                   <tr>
                     <th scope="row">{{ $loop->iteration}}</th>
                     <td>{{ $tentang->title_about}}</td>
-                    <td>{{ $tentang->description_about}}</td>
+                    <td>{{ strip_tags($tentang->description_about)}}</td>
                     <td><img src="assets/uploads/{{ $tentang->img_about}}" width="50" alt=""></td>
                     <td>
-                      <a href="{{ route('tentang.edit') }}" class="btn btn-link text-success p-0" style="font-size: 20px;"> <i class="fa fa-edit"></i></a> 
+                      <a href="{{ route('tentang.edit', $tentang->id) }}" class="btn btn-link text-success p-0" style="font-size: 20px;"> <i class="fa fa-edit"></i></a> 
                       <form action="{{ route('tentang.delete',  $tentang->id) }}" method="POST" class="d-inline">
                         @method('delete')
                         @csrf
