@@ -50,7 +50,7 @@ class AboutController extends Controller
             // dd($request->all());
         }
 
-        return redirect(route('tentang'));
+        return redirect('tentang');
     }
 
     /**
@@ -70,10 +70,10 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit($id)
     {
-        $layanan = About::findorfail($id);
-        return view('Backend_admin.Contents.Page.service_edit', ['services' => $layanan]);
+        $tentang = About::findorfail($id);
+        return view('Backend_admin.Contents.Page.about_edit', ['abouts' => $tentang]);
     }
 
     // {
@@ -90,11 +90,23 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        DB::table('abouts')->where('id', $request->id)->update([
-            'title_about' => $request->title_about,
-            'description_about' => $request->description_about
-        ]);
+        // DB::table('abouts')->where('id', $request->id)->update([
+        //     'title_about' => $request->title_about,
+        //     'description_about' => $request->description_about,
+        //     'img_about'     => $request->img_about
+        // ]);
 
+        if ($request->hasFile('img_about')) {
+            $img_about = $request->file('img_about');
+            $tujuan_upload = 'assets/uploads/';
+            $nama_file = time() . "." . $img_about->getClientOriginalExtension();
+            $img_about->move($tujuan_upload, $nama_file);
+            DB::table('abouts')->where('id', $request->id)->update([
+                'title_about' => $request->title_about,
+                'description_about' => $request->description_about,
+                'img_about' => $nama_file
+            ]);
+        }
 
         // $data = About::find($request->id);
         // if ($request->hasFile('img_about')) {

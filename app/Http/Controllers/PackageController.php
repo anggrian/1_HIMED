@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Package;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PackageController extends Controller
 {
@@ -14,7 +15,8 @@ class PackageController extends Controller
      */
     public function index()
     {
-        return view('Backend_admin.Contents.Package.package_himed');
+        $paket = DB::table('packages')->get();
+        return view('Backend_admin.Contents.Package.package_himed', ['packages' => $paket]);
     }
 
     /**
@@ -35,7 +37,11 @@ class PackageController extends Controller
      */
     public function store(Request $request)
     {
-        // 
+        DB::table('packages')->insert([
+            'title_package' => $request->title_package,
+            'description_package' => $request->description_package
+        ]);
+        return redirect('paket');
     }
 
     /**
@@ -55,9 +61,10 @@ class PackageController extends Controller
      * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function edit(Package $package)
+    public function edit($id)
     {
-        //
+        $paket = Package::findorfail($id);
+        return view('Backend_admin.Contents.Package.package_edit', ['packages' => $paket]);
     }
 
     /**
@@ -69,7 +76,11 @@ class PackageController extends Controller
      */
     public function update(Request $request, Package $package)
     {
-        //
+        DB::table('packages')->where('id', $request->id)->update([
+            'title_package' => $request->title_package,
+            'description_package' => $request->description_package
+        ]);
+        return redirect('paket');
     }
 
     /**
@@ -78,8 +89,10 @@ class PackageController extends Controller
      * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Package $package)
+    public function destroy($package)
     {
-        //
+        $paket = Package::find($package);
+        $paket->delete();
+        return redirect('paket');
     }
 }

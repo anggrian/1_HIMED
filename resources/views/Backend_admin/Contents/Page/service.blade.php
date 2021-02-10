@@ -4,7 +4,7 @@
 
 @section('container')
     
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-3">
     <div class="">
       <div class="clearfix"></div>
       <div class="row">
@@ -35,12 +35,15 @@
                   </label>
                   <div class="col-md-6 col-sm-6 ">
                     <textarea class="form-control" rows="3"  name="description_service" id="description_service"></textarea>
+                    <script>
+                      CKEDITOR.replace( 'description_service' );
+                    </script>
                 </div>
                 </div>
                 <div class="ln_solid"></div>
                 <div class="item form-group">
                   <div class="col-md-6 col-sm-6 offset-md-3">
-                    <button type="submit" class="btn btn-success"  ><i class="fa fa-send"> submit</i></button>
+                    <button type="submit" class="btn btn-success"  ><i class="fa fa-send"> Submit</i></button>
                   </div>
                 </div>
               </form>
