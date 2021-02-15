@@ -52,12 +52,13 @@
     <section class="bub-right">
         <div class="container container-result">
             <div class="result">
-                <h4>{{$features->main_title}}</h4>
-                <p>{{$features->main_description}}</p>
+                <h4>{{$abouts->title_about}}</h4>
+                <p>{{ strip_tags($abouts->description_about)}}</p>
+                <p></p>
                 <button class="btn btn-primary">READ MORE</button>
             </div>
             <div class="img-result">
-                <img src="assets/uploads/{{ $features->thumbnail}}" alt="" class="gambar-result">
+                <img src="assets/uploads/{{ $abouts->img_about}}" alt="" class="gambar-result">
             </div>
         </div>
     </section>
@@ -272,6 +273,29 @@
                 </div>
                 <!-- Card Our Pricing Plans -->
                 <div class="card-our-pricing-plans">
+                    
+                    <div class="col-lg-4 col-md-6 pad-opp d-flex justify-content-center">
+                        <div class="card-opp">
+                            <div class="header-oop">
+                                <h5 class="h5-oop">{{$packages->title_package}}</h5>
+                                <h1 class="h1-oop">$2</h1>
+                                <p class="p-oop">per month</p>
+                            </div>
+                            <div class="table-oop">
+                                <p class="p-sub-opp">250GB Bandwidth</p>
+                                <p class="p-sub-opp">08 Email Account</p>
+                                <p class="p-sub-opp">Unlimited Database </p>
+                                <p class="p-sub-opp">10GB Free Disk </p>
+                                <p class="p-sub-opp">24/7 Support</p>
+                            </div>
+                            <div class="btn-oop">
+                                <a href="" class="btn btn-primary">Start</a>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                {{-- <div class="card-our-pricing-plans">
                     <div class="col-lg-4 col-md-6 pad-opp d-flex justify-content-center">
                         <div class="card-opp-noactive">
                             <div class="header-oop">
@@ -329,7 +353,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

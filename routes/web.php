@@ -44,6 +44,8 @@ Route::get('tentang', [AboutController::class, 'index'])->name('tentang');
 Route::delete('tentang/{tentang}', [AboutController::class, 'destroy'])->name('tentang.delete');
 Route::get('tentang/edit{id}', [AboutController::class, 'edit'])->name('tentang.edit');
 Route::put('tentang/update{id}', [AboutController::class, 'update'])->name('tentang.update');
+Route::get('About-Us', [AboutController::class, 'frontend_about'])->name('tentang.frontend');
+
 // layanan
 Route::get('layanan', [ServiceController::class, 'index'])->name('layanan');
 Route::post('layanan', [ServiceController::class, 'store'])->name('layanan');
@@ -69,9 +71,10 @@ Route::get('/isi-post/{slug}', [BlogController::class, 'isi_blog'])->name('blog.
 Route::get('/list-post', 'BlogController@list_blog')->name('blog.list');
 Route::get('/list-category/{category}', 'BlogController@list_category')->name('blog.category');
 Route::get('/cari', 'BlogController@cari')->name('blog.cari');
+Route::resource('/category', CategoryController::class);
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('/category', CategoryController::class);
+    //Route::resource('/category', CategoryController::class);
     Route::resource('/tag', TagController::class);
 
     Route::get('/post/tampil_hapus', 'PostController@tampil_hapus')->name('post.tampil_hapus');

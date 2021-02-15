@@ -18,6 +18,13 @@ class AboutController extends Controller
         $tentang = DB::table('abouts')->get();
         return view('Backend_admin.Contents.Page.about', ['abouts' => $tentang]);
     }
+    public function frontend_about()
+    {
+        // $tentang = DB::table('abouts')->get();
+        // return view('Backend_admin.Contents.Page.about', ['abouts' => $tentang]);
+        $tentang_frontend = About::latest('id')->first();
+        return view('Frontend.About_Us.frontend_about', ['abouts' => $tentang_frontend]);
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -9,7 +9,7 @@
           <i class="fas fa-times"></i>
         </div>
         <li><a href="{{ route('index')}}">HOME</a></li>
-        <li><a href="#">ABOUT US</a></li>
+        <li><a href="{{ route('tentang.frontend')}}">ABOUT US</a></li>
         <li><a href="#">SERVICES</a></li>
         <li><a href="#">FAQ</a></li>
         <li><a href="blog">BLOG</a></li>

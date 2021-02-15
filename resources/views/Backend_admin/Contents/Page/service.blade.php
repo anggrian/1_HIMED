@@ -82,7 +82,7 @@
                   <tr>
                     <th scope="row">{{ $loop->iteration}}</th>
                     <td>{{ $layanan->title_service}}</td>
-                    <td>{{ $layanan->description_service}}</td>
+                    <td>{{ strip_tags($layanan->description_service)}}</td>
                     <td>
                       <a href="{{ route('layanan.edit',  $layanan->id) }}" class="btn btn-link text-success p-0" style="font-size: 20px;"> <i class="fa fa-edit"></i></a> 
 
