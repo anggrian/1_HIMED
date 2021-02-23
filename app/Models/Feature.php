@@ -9,4 +9,9 @@ class Feature extends Model
 {
     use HasFactory;
     protected $table = 'features';
+
+    public function packages()
+    {
+        return $this->belongsTo('App\Models\Package');
+    }
 }

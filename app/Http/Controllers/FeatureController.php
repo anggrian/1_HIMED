@@ -16,9 +16,13 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        $fitur = DB::table('features')->get();
-
-        return view('Backend_admin.Contents.Feature.feature_himed', ['features' => $fitur]);
+        // $features = DB::table('features')->get();
+        $features = DB::table('features')
+            ->join('packages', 'features.packages_id', '=', 'packages.id')
+            ->select('features.*', 'packages.title_package')
+            ->get();
+        $paket = DB::table('packages')->get();
+        return view('Backend_admin.Contents.Feature.feature_himed', compact('paket', 'features'));
     }
 
     /**
@@ -28,7 +32,8 @@ class FeatureController extends Controller
      */
     public function create()
     {
-        //
+        $paket = Package::all();
+        return view('Backend_admin.Contents.Feature.feature_himed', compact('paket'));
     }
 
     /**
@@ -46,6 +51,7 @@ class FeatureController extends Controller
             $thumbnail->move($tujuan_upload, $nama_file);
             DB::table('features')->insert([
                 'main_title' => $request->main_title,
+                'packages_id' => $request->packages_id,
                 'main_description' => $request->main_description,
                 'thumbnail' => $nama_file
             ]);

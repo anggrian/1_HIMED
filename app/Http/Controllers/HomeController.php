@@ -18,10 +18,14 @@ class HomeController extends Controller
     public function index()
     {
         //$tentang = About::first(); //untuk menampilkan data dari yang awal
-        $tentang = About::latest('id')->first();  //untuk menampilkan data dari yang akhir
-        $paket = Package::latest('id')->first();
+        $abouts = About::latest('id')->first();  //untuk menampilkan data dari yang akhir
+        $features = DB::table('features')
+            ->join('packages', 'features.packages_id', '=', 'packages.id')
+            ->select('features.*', 'packages.title_package')
+            ->get();
+        $packages = DB::table('packages')->get();
 
-        return view('Frontend.index', ['abouts' => $tentang], ['packages' => $paket]);
+        return view('Frontend.index', compact('abouts', 'packages', 'features'));
     }
 
 
