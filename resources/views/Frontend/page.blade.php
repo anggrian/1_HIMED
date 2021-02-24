@@ -327,7 +327,8 @@
                                 <p class="p-sub-opp">24/7 Support</p>
                             </div>
                             <div class="btn-oop">
-                                <a href="{{ route('frontend.fitur') }}" class="btn btn-primary">Detail</a>
+                                <a href="{{ route('frontend.fitur', $paket->main_title) }}"
+                                    class="btn btn-primary">Detail</a>
                             </div>
                         </div>
                     </div>

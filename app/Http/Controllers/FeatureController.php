@@ -26,10 +26,12 @@ class FeatureController extends Controller
         return view('Backend_admin.Contents.Feature.feature_himed', compact('paket', 'features'));
     }
 
-    public function frontend()
+    public function frontend_fitur($id)
     {
         $fitur = DB::table('features')->get();
-        return view('Frontend.feature.frontend_feature', compact('fitur'));
+
+        // $fitur = Feature::findorfail($id);
+        return view('Frontend.feature.frontend_feature', ['features' => $fitur]);
     }
 
     /**

@@ -620,6 +620,12 @@ a p {
     }
 
     .gambar-result {
+        width: 100%;
+    }
+    .img-result-frontend{
+        text-align: center;
+    }
+    .gambar-result-frontend {
         width: 70%;
     }
 

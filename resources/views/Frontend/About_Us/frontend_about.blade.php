@@ -4,8 +4,8 @@
     <!-- 3. Awal Section  A Straight Forward -->
     <section class="bub-right">
         <div class="container container-result mt-5">
-            <div class="img-result">
-                <img src="assets/uploads/{{ $abouts->img_about }}" alt="" class="gambar-result">
+            <div class="img-result-frontend">
+                <img src="assets/uploads/{{ $abouts->img_about }}" alt="" class="gambar-result-frontend">
             </div>
         </div>
         <div class="container container-result mt-5">
