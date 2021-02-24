@@ -316,7 +316,7 @@
                         <div class="card-opp">
                             <div class="header-oop">
                                 <h5 class="h5-oop">{{ $paket->title_package }}</h5>
-                                <h1 class="h1-oop">$2</h1>
+                                <h1 class="h1-oop">{{ $paket->main_title }}</h1>
                                 <p class="p-oop">per month</p>
                             </div>
                             <div class="table-oop">

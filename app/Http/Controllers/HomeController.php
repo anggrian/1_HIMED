@@ -19,13 +19,13 @@ class HomeController extends Controller
     {
         //$tentang = About::first(); //untuk menampilkan data dari yang awal
         $abouts = About::latest('id')->first();  //untuk menampilkan data dari yang akhir
-        $features = DB::table('features')
-            ->join('packages', 'features.packages_id', '=', 'packages.id')
-            ->select('features.*', 'packages.title_package')
-            ->get();
-        $packages = DB::table('packages')->get();
 
-        return view('Frontend.index', compact('abouts', 'packages', 'features'));
+        $packages = DB::table('packages')
+            ->join('features', 'packages.id', '=', 'features.packages_id')
+            ->select('packages.*', 'features.main_title')
+            ->get();
+
+        return view('Frontend.index', compact('abouts', 'packages'));
     }
 
 
