@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feature;
+use App\Models\Package;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Flight;
@@ -23,6 +24,12 @@ class FeatureController extends Controller
             ->get();
         $paket = DB::table('packages')->get();
         return view('Backend_admin.Contents.Feature.feature_himed', compact('paket', 'features'));
+    }
+
+    public function frontend()
+    {
+        $fitur = DB::table('features')->get();
+        return view('Frontend.feature.frontend_feature', compact('fitur'));
     }
 
     /**

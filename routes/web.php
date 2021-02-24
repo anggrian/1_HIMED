@@ -27,6 +27,7 @@ Route::delete('fitur/{fitur}', [FeatureController::class, 'destroy'])->name('del
 // Route::patch('fitur/{fitur}', [FeatureController::class, 'update']);
 Route::get('fitur/edit/{id}', [FeatureController::class, 'edit'])->name('fitur.edit');
 Route::put('fitur/update/{id}', [FeatureController::class, 'update'])->name('fitur.update');
+Route::get('frontend/fitur', [FeatureController::class, 'frontend'])->name('frontend.fitur');
 //paket
 // Route::resource('paket', PackageController::class);
 // Route::post('paket', [PackageController::class, 'store'])->name('paket');

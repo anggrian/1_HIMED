@@ -315,8 +315,8 @@
                     <div class="col-lg-4 col-md-6 pad-opp d-flex justify-content-center">
                         <div class="card-opp">
                             <div class="header-oop">
-                                <h5 class="h5-oop">{{ $paket->title_package }}</h5>
-                                <h1 class="h1-oop">{{ $paket->main_title }}</h1>
+                                <h3 class="h3-oop">{{ $paket->title_package }}</h3>
+                                <h5 class="h5-oop">{{ $paket->main_title }}</h5>
                                 <p class="p-oop">per month</p>
                             </div>
                             <div class="table-oop">
@@ -327,7 +327,7 @@
                                 <p class="p-sub-opp">24/7 Support</p>
                             </div>
                             <div class="btn-oop">
-                                <a href="" class="btn btn-primary">Start</a>
+                                <a href="{{ route('frontend.fitur') }}" class="btn btn-primary">Detail</a>
                             </div>
                         </div>
                     </div>

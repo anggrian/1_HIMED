@@ -1,76 +1,76 @@
 /* UMUM */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 section {
-  padding-top: 30px;
-  padding-bottom: 50px;
-  background: transparent;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    background: transparent;
 }
 .container .content {
-  text-align: center;
+    text-align: center;
 }
 .header-content h2.font-header {
-  font-size: 25px;
-  color: #13287e;
-  padding: 15px;
+    font-size: 25px;
+    color: #13287e;
+    padding: 15px;
 }
 p.text-content {
-  max-width: 500px;
-  margin: 0 auto;
-  padding-bottom: 30px;
-  opacity: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    opacity: 80%;
 }
 /* Untuk tampilan mobile / Hanphone */
 /* <!-- 1. Awal Section  Creative landing page template (HOME)--> */
 .section-home {
-  background-size: cover;
-  background-image: url(../img/bg/ai2.png);
-  background-repeat: no-repeat;
-  background-position: 28% 50%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+    background-size: cover;
+    background-image: url(../img/bg/ai2.png);
+    background-repeat: no-repeat;
+    background-position: 28% 50%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 .home {
-  width: 80%;
+    width: 80%;
 }
 .home h3 {
-  padding-left: 50px;
-  position: relative;
-  margin-top: 50px;
-  font-size: 18px;
-  font-weight: 600;
+    padding-left: 50px;
+    position: relative;
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 600;
 }
 .home h3::before {
-  content: "";
-  background: #3964f9;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 30px;
-  height: 2px;
+    content: "";
+    background: #3964f9;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 30px;
+    height: 2px;
 }
 .home h1 {
-  padding-top: 20px;
-  font-weight: 600;
-  /* font-size: 45px; */
-  margin-bottom: 20px;
-  color: #272e3a;
-  line-height: 1.3;
-  font-size: clamp(1rem, 10vw, 2rem);
+    padding-top: 20px;
+    font-weight: 600;
+    /* font-size: 45px; */
+    margin-bottom: 20px;
+    color: #272e3a;
+    line-height: 1.3;
+    font-size: clamp(1rem, 10vw, 2rem);
 }
 .home p {
-  color: #888888;
-  font-size: 14px;
-  margin-bottom: 30px;
-  line-height: 1.9;
-  width: 280px;
-  font-weight: 600;
-  text-align: justify;
+    color: #888888;
+    font-size: 14px;
+    margin-bottom: 30px;
+    line-height: 1.9;
+    width: 280px;
+    font-weight: 600;
+    text-align: justify;
 }
 /* .btn-home .btn {
   color: #fff;
@@ -79,491 +79,42 @@ p.text-content {
   border-radius: 25px;
   background-image: linear-gradient(to right, #21d397 0%, #7450fe 100%);
   padding: 10px 30px;
-  font-weight: 600; 
+  font-weight: 600;
 } */
 /* 2 */
 /* Section 2, Real Time chat ( Features) */
 .realtime {
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.realtime-col-satu {
-  vertical-align: auto;
-  width: 100%;
-}
-
-.realtime-col h4 {
-  margin-bottom: 20px;
-  font-size: 30px;
-  color: #354168;
-  line-height: 1.4;
-}
-
-.realtime-col-dua {
-  width: 100%;
-  align-self: center;
-}
-
-.realtime-col-dua p {
-  color: #888;
-  line-height: 1.9;
-  font-size: 15px;
-  margin-bottom: 1rem;
-}
-
-.kolom-lom {
-  width: 100%;
-  display: inline-block;
-  margin-bottom: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  background-color: white;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.kolom-lom h5 {
-  font-size: 22px;
-  margin-bottom: 20px;
-  color: #fff;
-  line-height: 1.4;
-}
-
-.kolom-lom p {
-  color: white;
-  line-height: 1.9;
-  margin-bottom: 1rem;
-}
-
-.card-satu {
-  background-color: #007bff;
-  text-align: center;
-}
-
-.card-dua {
-  background-color: #007bff;
-  text-align: center;
-}
-
-.card-tiga {
-  background-color: #007bff;
-  text-align: center;
-}
-
-.card-empat {
-  background-color: #007bff;
-  text-align: center;
-}
-
-/* <!-- 3. Awal Section  A Straight Forward --> */
-.container-result {
-  justify-content: center;
-  padding: 20px;
-}
-.result {
-  width: 100%;
-  /* margin: 0px 0px 0px 50px; */
-  color: white;
-  /* padding: 20px; */
-}
-.result h4 {
-  margin-bottom: 20px;
-  font-size: 30px;
-  color: #354168;
-  line-height: 1.4;
-  font-weight: 600;
-}
-.result p {
-  font-weight: bolder;
-  color: #888;
-  font-size: 15px;
-  line-height: 1.9;
-  margin-bottom: 1rem;
-}
-.gambar-result {
-  margin: auto;
-  display: block;
-  width: 60%;
-}
-/* <!-- 4. Awal Section  How it works--> */
-.hex-pat-1 {
-  background: url(../img/bg-section/hex-pattern.svg) no-repeat center left;
-}
-.service_icon {
-  padding-top: 20px;
-}
-.colored-icon {
-  padding: 30px;
-  border: 1px solid #00dcd8;
-  background-image: linear-gradient(to right, #21d397 0%, #7450fe 100%);
-  border-radius: 50%;
-}
-/* h6 & h6.bold umum 
--> h6 & h6.bold how it works, h6 & h6.bold our services,  */
-h6 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: #13287e;
-  font-family: "Poppins", sans-serif;
-}
-h6.bold {
-  font-weight: 600;
-}
-
-/* <!-- 5. Awal Section  Core Our Features--> */
-.bub-right {
-  background: url(../img/bg-section/bg_hero.svg) no-repeat center right;
-}
-img.img-cof-about {
-  padding: 30px;
-  margin: auto;
-  display: block;
-  width: 80%;
-}
-img.img-cof-feature {
-  padding-top: 15px;
-}
-
-/* <!-- 6. Awal Section Our Services --> */
-.card .header {
-  height: 250px;
-  background-color: #ffffff;
-}
-/* card umum 
--> card how it works, card our services,  */
-.card {
-  border-radius: 10px;
-  background-color: #ffffff;
-  overflow: hidden;
-  margin: 10px;
-  box-sizing: border-box;
-  box-shadow: #aaaaaa;
-}
-.card .content {
-  text-align: center;
-  box-sizing: border-box;
-  padding: 20px;
-}
-img.img-our-services {
-  max-width: 100%;
-  height: auto;
-  align-items: center;
-  padding-top: 25px;
-}
-
-/* <!-- 7. Awal Section Frequently Questions --> */
-.faq-timeline-area {
-  background: url(../img/bg-section/bread-bg.png) no-repeat center center;
-  background-size: cover;
-}
-/* image frequently */
-.frequntly {
-  height: 230px;
-  padding-bottom: 15px;
-}
-.btn-frequntly {
-  width: 100%;
-  text-align: left;
-}
-/* tombol umum */
-.btn-primary {
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #fff;
-  border: 1px solid #f6f8f2;
-  border-top: 1px solid #f2f4f8;
-  margin-bottom: 15px;
-  border-radius: 25px;
-  background-image: linear-gradient(to right, #21d397 0%, #7450fe 100%);
-  padding: 10px 25px;
-  font-weight: 600;
-  background-size: 200% auto;
-  letter-spacing: 1.5px;
-}
-/*-> btn frequntly, btn our pricing plans */
-.btn-frequntly {
-  color: #fff;
-  border: 1px solid #f6f8f2;
-  border-top: 1px solid #f2f4f8;
-  margin-bottom: 15px;
-  border-radius: 25px;
-  background-image: linear-gradient(to right, #21d397 0%, #7450fe 100%);
-  padding: 10px 25px;
-  font-weight: 600;
-  background-size: 200% auto;
-  letter-spacing: 1.5px;
-}
-
-/* <!-- 8. Awal Section Our Pricing Plans  / oop --> */
-.content.card-our-pricing-plans {
-  justify-content: center;
-}
-.col-md-6 {
-  flex: 0 0 auto;
-  width: 100% !important;
-}
-.card-opp {
-  width: 270px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  padding-bottom: 20px;
-  padding-top: 40px;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
-}
-.card-opp-noactive {
-  width: 270px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  padding-bottom: 20px;
-  padding-top: 40px;
-}
-h5.h5-oop {
-  color: #222222;
-  font-size: 18px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-h1.h1-oop {
-  font-size: 48px;
-  margin-bottom: 25px;
-  line-height: 1;
-  color: #3964f9;
-}
-p.p-oop {
-  color: #888888;
-  font-size: 16px;
-  font-weight: 400;
-  margin-bottom: 0;
-  line-height: 1;
-}
-.table-oop {
-  box-sizing: border-box;
-  padding-top: 30px;
-  margin-bottom: 20px;
-}
-p.p-sub-opp {
-  color: #888;
-}
-.pad-opp {
-  padding-bottom: 30px;
-}
-
-/* <!-- 9. Awal Section Loved By Our Clients --> */
-.single-testimonial {
-  border-radius: 15px;
-  border: 1px solid #eee;
-  box-sizing: border-box;
-  background-color: rgb(255, 255, 255);
-}
-.header-img {
-  padding: 25px;
-}
-.testimonial-image {
-  height: 100px;
-  width: 100px;
-  margin: auto;
-}
-.testimonial-image img {
-  border-radius: 50%;
-}
-.img-lovly {
-  max-width: 100%;
-  height: auto;
-  align-items: center;
-}
-.testimonial-description {
-  padding: 15px;
-}
-.admin_text {
-  padding-top: 20px;
-}
-.ptd {
-  color: #888888;
-  font-weight: 500;
-  font-size: 15px;
-}
-
-/* <!-- 10. Awal Section Footer --> */
-footer {
-  padding-top: 50px;
-  background-color: #4934d4d8;
-  padding-bottom: 100px;
-}
-.section-footer {
-  display: block;
-  margin: 20px auto;
-  background-color: #0d6efd;
-  color: #ffffff;
-  padding: 50px;
-  text-align: left;
-  justify-content: space-between;
-  border: 1px;
-  border-radius: 5px;
-}
-.container-footer {
-  text-align: center;
-}
-.img-robovision {
-  width: 40px;
-}
-.text-robovision {
-  font-size: 15pt;
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.text-header-robovision {
-  color: #ccc;
-  font-size: 11pt;
-  text-align: center;
-  margin: 0px 50px;
-}
-.kolom {
-  box-sizing: border-box;
-  color: #fff;
-  padding-top: 70px !important;
-}
-.kolom.robovision {
-  flex: 3.5;
-  padding-right: 10px;
-}
-.kolom.privacy-tos {
-  flex: 3;
-}
-.kolom.navigate {
-  flex: 2.5;
-}
-.kolom.contact-us {
-  flex: 3;
-}
-
-.readmore .rounded-pill {
-  white-space: nowrap;
-}
-.kolom a {
-  text-decoration: none;
-  color: #ccc;
-  font-size: 15px;
-}
-
-a p {
-  display: block;
-  margin-block-start: 0px;
-  margin-block-end: 5px;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
-/*  | *********** RESPONSIVE  tampilan tablet ********** |*/
-@media (min-width: 426px) and (max-width: 768px) {
-  section {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  .kolom-lom {
-    width: 46%;
-  }
-  .card.shadow {
-    margin: 10px 100px;
-  }
-
-  .card .header {
-    height: 170px;
-  }
-  img.img-our-services {
-    width: 40%;
-  }
-  img.img-cof-about {
-    padding: 10px;
-    width: 50%;
-  }
-  p.text-content {
-    padding-bottom: 30px;
-  }
-}
-
-/*  | *********** RESPONSIVE  tampilan website ********** |*/
-@media (min-width: 769px) {
-  /* Btn umum */
-  .btn-primary {
-    font-size: 15px;
-  }
-
-  /* <!-- 1. Awal Section  Creative landing page template--> */
-  .section-home {
-    background-size: cover;
-    background-image: url(../img/bg/ai2.png);
-    background-repeat: no-repeat;
-    background-position: top left;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-  .home {
-    width: 50%;
-  }
-  .home h3 {
-    font-size: 18px;
-    font-weight: 600;
-  }
-  .home h1 {
-    padding-top: 20px;
-    font-weight: 600;
-    font-size: 45px;
-    margin-bottom: 20px;
-    color: #272e3a;
-  }
-  .home p {
-    color: #888888;
-    font-size: 18px;
-    margin-bottom: 30px;
-    margin-top: 0;
-    line-height: 1.9;
-    width: 80%;
-    font-weight: 600;
-  }
-
-  /* .btn-home .btn {
-    display: inline-block;
-  } */
-  .result {
-    width: 60%;
-  }
-  /* 2 */
-  /* Section 2, Real Time chat ( Features) */
-  .realtime {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-  }
+}
 
-  .realtime-col-satu {
+.realtime-col-satu {
     vertical-align: auto;
-    width: 50%;
-  }
+    width: 100%;
+}
 
-  .realtime-col h4 {
+.realtime-col h4 {
     margin-bottom: 20px;
     font-size: 30px;
     color: #354168;
     line-height: 1.4;
-  }
+}
 
-  .realtime-col-dua {
-    width: 50%;
+.realtime-col-dua {
+    width: 100%;
     align-self: center;
-  }
+}
 
-  .realtime-col-dua p {
+.realtime-col-dua p {
     color: #888;
     line-height: 1.9;
     font-size: 15px;
     margin-bottom: 1rem;
-  }
+}
 
-  .kolom-lom {
-    width: 45%;
+.kolom-lom {
+    width: 100%;
     display: inline-block;
     margin-bottom: 20px;
     margin-left: 10px;
@@ -571,189 +122,642 @@ a p {
     background-color: white;
     padding: 10px;
     border-radius: 5px;
-  }
+}
 
-  .kolom-lom h5 {
+.kolom-lom h5 {
     font-size: 22px;
     margin-bottom: 20px;
     color: #fff;
     line-height: 1.4;
-  }
+}
 
-  .kolom-lom p {
+.kolom-lom p {
     color: white;
     line-height: 1.9;
     margin-bottom: 1rem;
-  }
+}
 
-  .card-satu {
+.card-satu {
     background-color: #007bff;
     text-align: center;
-  }
+}
 
-  .card-satu {
+.card-dua {
     background-color: #007bff;
     text-align: center;
-  }
+}
 
-  .card-dua {
+.card-tiga {
     background-color: #007bff;
     text-align: center;
-  }
+}
 
-  .card-tiga {
+.card-empat {
     background-color: #007bff;
     text-align: center;
-  }
+}
 
-  .card-empat {
-    background-color: #007bff;
-    text-align: center;
-  }
-
-  /* <!-- 3. Awal Section  A Straight Forward --> */
-  .container-result {
-    box-sizing: border-box;
-    display: flex;
-  }
-
-  .gambar-result {
+/* <!-- 3. Awal Section  A Straight Forward --> */
+.container-result {
+    justify-content: center;
+    padding: 20px;
+}
+.result {
     width: 100%;
-  }
-
-  /* <!-- 4. Awal Section  How it works--> */
-
-  .card-hiw {
-    display: flex;
-  }
-  .service_icon {
+    /* margin: 0px 0px 0px 50px; */
+    color: white;
+    /* padding: 20px; */
+}
+.result h4 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #354168;
+    line-height: 1.4;
+    font-weight: 600;
+}
+.result p {
+    font-weight: bolder;
+    color: #888;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 1rem;
+}
+.gambar-result {
+    margin: auto;
+    display: block;
+    width: 80%;
+}
+/* <!-- 4. Awal Section  How it works--> */
+.hex-pat-1 {
+    background: url(../img/bg-section/hex-pattern.svg) no-repeat center left;
+}
+.service_icon {
     padding-top: 20px;
-  }
-  .colored-icon {
+}
+.colored-icon {
     padding: 30px;
-    position: relative;
-    border: 2px solid #00dcd8;
+    border: 1px solid #00dcd8;
     background-image: linear-gradient(to right, #21d397 0%, #7450fe 100%);
-    max-width: 140px;
     border-radius: 50%;
-    transition: all 0.3s ease-in-out;
-  }
+}
+/* h6 & h6.bold umum
+-> h6 & h6.bold how it works, h6 & h6.bold our services,  */
+h6 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #13287e;
+    font-family: "Poppins", sans-serif;
+}
+h6.bold {
+    font-weight: 600;
+}
 
-  /* <!-- 5. Awal Section  Core Our Features--> */
+/* <!-- 5. Awal Section  Core Our Features--> */
+.bub-right {
+    background: url(../img/bg-section/bg_hero.svg) no-repeat center right;
+}
+img.img-cof-about {
+    padding: 30px;
+    margin: auto;
+    display: block;
+    width: 80%;
+}
+img.img-cof-feature {
+    padding-top: 15px;
+}
 
-  .content-cof {
-    display: flex;
-    align-items: center;
-  }
-  .img-cof-about {
-    height: 90%;
-  }
-  img.img-cof-about {
-    width: 100%;
-    padding-bottom: 15px;
-  }
-  .modal-cof {
+/* <!-- 6. Awal Section Our Services --> */
+.card .header {
+    height: 250px;
+    background-color: #ffffff;
+}
+/* card umum
+-> card how it works, card our services,  */
+.card {
+    border-radius: 10px;
+    background-color: #ffffff;
+    overflow: hidden;
+    margin: 10px;
     box-sizing: border-box;
-  }
-  .sub-cof {
-    align-items: center;
-  }
-  .img-cof-feature {
-    max-width: 57px;
+    box-shadow: #aaaaaa;
+}
+.card .content {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+img.img-our-services {
+    max-width: 100%;
     height: auto;
-  }
-  .card-body {
-    text-align: left;
-  }
+    align-items: center;
+    padding-top: 25px;
+}
 
-  /* <!-- 6. Awal Section Our Services --> */
-  .card {
-    display: flex;
-  }
-  .card-our-services {
-    display: flex;
-  }
-
-  /* <!-- 7. Awal Section Frequently Questions --> */
-
-  .content-frequntly {
-    display: flex;
-  }
-  .frequntly {
-    height: 450px;
-  }
-  .menu-frequntly {
-    padding-left: 20px;
-  }
-  .btn-frequntly {
+/* <!-- 7. Awal Section Frequently Questions --> */
+.faq-timeline-area {
+    background: url(../img/bg-section/bread-bg.png) no-repeat center center;
+    background-size: cover;
+}
+/* image frequently */
+.frequntly {
+    height: 230px;
+    padding-bottom: 15px;
+}
+.btn-frequntly {
     width: 100%;
     text-align: left;
-  }
-  .btn-frequntly {
+}
+/* tombol umum */
+.btn-primary {
+    font-size: 12px;
+    text-transform: uppercase;
     color: #fff;
-    border: 1px solid #f2f4f8;
+    border: 1px solid #f6f8f2;
     border-top: 1px solid #f2f4f8;
     margin-bottom: 15px;
     border-radius: 25px;
     background-image: linear-gradient(to right, #21d397 0%, #7450fe 100%);
-    padding: 5px 25px;
+    padding: 10px 25px;
     font-weight: 600;
     background-size: 200% auto;
-  }
+    letter-spacing: 1.5px;
+}
+/*-> btn frequntly, btn our pricing plans */
+.btn-frequntly {
+    color: #fff;
+    border: 1px solid #f6f8f2;
+    border-top: 1px solid #f2f4f8;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    background-image: linear-gradient(to right, #21d397 0%, #7450fe 100%);
+    padding: 10px 25px;
+    font-weight: 600;
+    background-size: 200% auto;
+    letter-spacing: 1.5px;
+}
 
-  /* <!-- 8. Awal Section Our Pricing Plans  / oop --> */
-  .card-our-pricing-plans {
-    display: flex;
+/* <!-- 8. Awal Section Our Pricing Plans  / oop --> */
+.content.card-our-pricing-plans {
     justify-content: center;
-  }
-  .col-md-6 {
+}
+.col-md-6 {
     flex: 0 0 auto;
-    width: 30% !important;
-  }
+    width: 100% !important;
+}
+.card-opp {
+    width: 270px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+    padding-top: 40px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+}
+.card-opp-noactive {
+    width: 270px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+    padding-top: 40px;
+}
+h3.h3-oop {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #3964f9;
+}
+h5.h5-oop {
+    margin-bottom: 25px;
+    line-height: 1;
+    text-transform: lowercase;
+}
+p.p-oop {
+    color: #888888;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+    line-height: 1;
+}
+.table-oop {
+    box-sizing: border-box;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+p.p-sub-opp {
+    color: #888;
+}
+.pad-opp {
+    padding-bottom: 30px;
+}
 
-  /* <!-- 10. Awal Section Footer --> */
-  .container-footer {
-    display: flex;
-    text-align: left;
-  }
-  .font-header {
-    font-size: 30px;
-    color: #13287e;
-    padding: 15px;
-    font-weight: 650;
-  }
-
-  .section-footer {
-    display: flex;
+/* <!-- 9. Awal Section Loved By Our Clients --> */
+.single-testimonial {
+    border-radius: 15px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+}
+.header-img {
+    padding: 25px;
+}
+.testimonial-image {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+}
+.testimonial-image img {
+    border-radius: 50%;
+}
+.img-lovly {
+    max-width: 100%;
+    height: auto;
     align-items: center;
-    margin-bottom: 100px;
-  }
+}
+.testimonial-description {
+    padding: 15px;
+}
+.admin_text {
+    padding-top: 20px;
+}
+.ptd {
+    color: #888888;
+    font-weight: 500;
+    font-size: 15px;
+}
 
-  .readmore {
-    margin: 12px;
-  }
-  .text-header-robovision {
+/* <!-- 10. Awal Section Footer --> */
+footer {
+    padding-top: 50px;
+    background-color: #4934d4d8;
+    padding-bottom: 100px;
+}
+.section-footer {
+    display: block;
+    margin: 20px auto;
+    background-color: #0d6efd;
+    color: #ffffff;
+    padding: 50px;
+    text-align: left;
+    justify-content: space-between;
+    border: 1px;
+    border-radius: 5px;
+}
+.container-footer {
+    text-align: center;
+}
+.img-robovision {
+    width: 40px;
+}
+.text-robovision {
+    font-size: 15pt;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.text-header-robovision {
     color: #ccc;
     font-size: 11pt;
-    text-align: justify;
-    width: 310px;
-    margin: 0px 0px;
-  }
-  .kolom {
+    text-align: center;
+    margin: 0px 50px;
+}
+.kolom {
     box-sizing: border-box;
     color: #fff;
-  }
-  .kolom.robovision {
+    padding-top: 70px !important;
+}
+.kolom.robovision {
     flex: 3.5;
     padding-right: 10px;
-  }
-  .kolom.privacy-tos {
+}
+.kolom.privacy-tos {
     flex: 3;
-  }
-  .kolom.navigate {
+}
+.kolom.navigate {
     flex: 2.5;
-  }
-  .kolom.contact-us {
+}
+.kolom.contact-us {
     flex: 3;
-  }
+}
+
+.readmore .rounded-pill {
+    white-space: nowrap;
+}
+.kolom a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 15px;
+}
+
+a p {
+    display: block;
+    margin-block-start: 0px;
+    margin-block-end: 5px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+/*  | *********** RESPONSIVE  tampilan tablet ********** |*/
+@media (min-width: 426px) and (max-width: 768px) {
+    section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .kolom-lom {
+        width: 46%;
+    }
+    .card.shadow {
+        margin: 10px 100px;
+    }
+
+    .card .header {
+        height: 170px;
+    }
+    img.img-our-services {
+        width: 40%;
+    }
+    img.img-cof-about {
+        padding: 10px;
+        width: 50%;
+    }
+    p.text-content {
+        padding-bottom: 30px;
+    }
+    .gambar-result {
+        width: 60%;
+    }
+}
+
+/*  | *********** RESPONSIVE  tampilan website ********** |*/
+@media (min-width: 769px) {
+    /* Btn umum */
+    .btn-primary {
+        font-size: 15px;
+    }
+
+    /* <!-- 1. Awal Section  Creative landing page template--> */
+    .section-home {
+        background-size: cover;
+        background-image: url(../img/bg/ai2.png);
+        background-repeat: no-repeat;
+        background-position: top left;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    .home {
+        width: 50%;
+    }
+    .home h3 {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .home h1 {
+        padding-top: 20px;
+        font-weight: 600;
+        font-size: 45px;
+        margin-bottom: 20px;
+        color: #272e3a;
+    }
+    .home p {
+        color: #888888;
+        font-size: 18px;
+        margin-bottom: 30px;
+        margin-top: 0;
+        line-height: 1.9;
+        width: 80%;
+        font-weight: 600;
+    }
+
+    /* .btn-home .btn {
+    display: inline-block;
+  } */
+    .result {
+        width: 60%;
+    }
+    /* 2 */
+    /* Section 2, Real Time chat ( Features) */
+    .realtime {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .realtime-col-satu {
+        vertical-align: auto;
+        width: 50%;
+    }
+
+    .realtime-col h4 {
+        margin-bottom: 20px;
+        font-size: 30px;
+        color: #354168;
+        line-height: 1.4;
+    }
+
+    .realtime-col-dua {
+        width: 50%;
+        align-self: center;
+    }
+
+    .realtime-col-dua p {
+        color: #888;
+        line-height: 1.9;
+        font-size: 15px;
+        margin-bottom: 1rem;
+    }
+
+    .kolom-lom {
+        width: 45%;
+        display: inline-block;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .kolom-lom h5 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        color: #fff;
+        line-height: 1.4;
+    }
+
+    .kolom-lom p {
+        color: white;
+        line-height: 1.9;
+        margin-bottom: 1rem;
+    }
+
+    .card-satu {
+        background-color: #007bff;
+        text-align: center;
+    }
+
+    .card-satu {
+        background-color: #007bff;
+        text-align: center;
+    }
+
+    .card-dua {
+        background-color: #007bff;
+        text-align: center;
+    }
+
+    .card-tiga {
+        background-color: #007bff;
+        text-align: center;
+    }
+
+    .card-empat {
+        background-color: #007bff;
+        text-align: center;
+    }
+
+    /* <!-- 3. Awal Section  A Straight Forward --> */
+    .container-result {
+        box-sizing: border-box;
+        display: flex;
+    }
+
+    .gambar-result {
+        width: 70%;
+    }
+
+    /* <!-- 4. Awal Section  How it works--> */
+
+    .card-hiw {
+        display: flex;
+    }
+    .service_icon {
+        padding-top: 20px;
+    }
+    .colored-icon {
+        padding: 30px;
+        position: relative;
+        border: 2px solid #00dcd8;
+        background-image: linear-gradient(to right, #21d397 0%, #7450fe 100%);
+        max-width: 140px;
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* <!-- 5. Awal Section  Core Our Features--> */
+
+    .content-cof {
+        display: flex;
+        align-items: center;
+    }
+    .img-cof-about {
+        height: 90%;
+    }
+    img.img-cof-about {
+        width: 100%;
+        padding-bottom: 15px;
+    }
+    .modal-cof {
+        box-sizing: border-box;
+    }
+    .sub-cof {
+        align-items: center;
+    }
+    .img-cof-feature {
+        max-width: 57px;
+        height: auto;
+    }
+    .card-body {
+        text-align: left;
+    }
+
+    /* <!-- 6. Awal Section Our Services --> */
+    .card {
+        display: flex;
+    }
+    .card-our-services {
+        display: flex;
+    }
+
+    /* <!-- 7. Awal Section Frequently Questions --> */
+
+    .content-frequntly {
+        display: flex;
+    }
+    .frequntly {
+        height: 450px;
+    }
+    .menu-frequntly {
+        padding-left: 20px;
+    }
+    .btn-frequntly {
+        width: 100%;
+        text-align: left;
+    }
+    .btn-frequntly {
+        color: #fff;
+        border: 1px solid #f2f4f8;
+        border-top: 1px solid #f2f4f8;
+        margin-bottom: 15px;
+        border-radius: 25px;
+        background-image: linear-gradient(to right, #21d397 0%, #7450fe 100%);
+        padding: 5px 25px;
+        font-weight: 600;
+        background-size: 200% auto;
+    }
+
+    /* <!-- 8. Awal Section Our Pricing Plans  / oop --> */
+    .card-our-pricing-plans {
+        display: flex;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 30% !important;
+    }
+
+    /* <!-- 10. Awal Section Footer --> */
+    .container-footer {
+        display: flex;
+        text-align: left;
+    }
+    .font-header {
+        font-size: 30px;
+        color: #13287e;
+        padding: 15px;
+        font-weight: 650;
+    }
+
+    .section-footer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+
+    .readmore {
+        margin: 12px;
+    }
+    .text-header-robovision {
+        color: #ccc;
+        font-size: 11pt;
+        text-align: justify;
+        width: 310px;
+        margin: 0px 0px;
+    }
+    .kolom {
+        box-sizing: border-box;
+        color: #fff;
+    }
+    .kolom.robovision {
+        flex: 3.5;
+        padding-right: 10px;
+    }
+    .kolom.privacy-tos {
+        flex: 3;
+    }
+    .kolom.navigate {
+        flex: 2.5;
+    }
+    .kolom.contact-us {
+        flex: 3;
+    }
 }
