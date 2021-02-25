@@ -11,8 +11,7 @@
         <div class="container container-result mt-5">
             <div class="result">
                 <h4>{{ $abouts->title_about }}</h4>
-                <p>{{ strip_tags($abouts->description_about) }}</p>
-                <p></p>
+                <p>{!! $abouts->description_about !!}</p>
             </div>
         </div>
     </section>

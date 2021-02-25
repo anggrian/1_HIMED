@@ -59,7 +59,7 @@
     <div class="container container-result">
         <div class="result">
             <h4>{{ $abouts->title_about }}</h4>
-            <p>{{ strip_tags($abouts->description_about) }}</p>
+            <p>{!! $abouts->description_about !!}</p>
             <p></p>
             <button class="btn btn-primary">READ MORE</button>
         </div>

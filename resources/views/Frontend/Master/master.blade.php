@@ -82,7 +82,7 @@
     @yield('frontend')
 
     <!-- 10. Awal Section Footer -->
-    <footer>
+    <div class="footer-frontend">
         <div class="container">
             <!-- Awal Footer  -->
             <div class="container-footer">
@@ -161,7 +161,7 @@
             </div>
             <!-- Akhir Footer  -->
         </div>
-    </footer>
+    </div>
     <!-- Akhir Section Foter -->
     <!-- Optional JavaScript; choose one of the two! -->
 
