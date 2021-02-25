@@ -10,13 +10,13 @@
                     <img src="../assets/uploads/{{ $item->thumbnail }}" alt="gak nampil" class="gambar-result">
                 </div>
             </div>
-            {{-- <div class="container container-result mt-5">
-            <div class="result">
-                <h4>{{ $abouts->title_about }}</h4>
-                <p>{{ strip_tags($abouts->description_about) }}</p>
-                <p></p>
+            <div class="container container-result mt-5">
+                <div class="result">
+                    <h4>{{ $item->main_title }}</h4>
+                    <p>{!! $item->main_description !!}</p>
+                    <p></p>
+                </div>
             </div>
-        </div> --}}
         @endforeach
     </section>
     <!-- / 3. Akhir Section  A Straight Forward -->
