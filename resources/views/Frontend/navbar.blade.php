@@ -9,7 +9,7 @@
             </div>
             <li><a href="{{ route('index') }}">HOME</a></li>
             <li><a href="{{ route('tentang.frontend') }}">ABOUT US</a></li>
-            <li><a href="#">SERVICES</a></li>
+            <li><a href="{{ route('layanan.frontend') }}">SERVICES</a></li>
             <li><a href="blog">BLOG</a></li>
             <li><a href="#">CONTACT</a></li>
         </ul>

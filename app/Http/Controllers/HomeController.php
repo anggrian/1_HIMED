@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Feature;
 use App\Models\Package;
+use App\Models\Service;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,12 +22,13 @@ class HomeController extends Controller
         //$tentang = About::first(); //untuk menampilkan data dari yang awal
         $abouts = About::latest('id')->first();  //untuk menampilkan data dari yang akhir
 
+        $services = DB::table('services')->get();
         $packages = DB::table('packages')
             ->join('features', 'packages.id', '=', 'features.packages_id')
             ->select('packages.*', 'features.main_title')
             ->get();
 
-        return view('Frontend.index', compact('abouts', 'packages'));
+        return view('Frontend.index', compact('abouts', 'packages', 'services'));
     }
 
 

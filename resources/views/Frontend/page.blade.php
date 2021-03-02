@@ -20,26 +20,14 @@
     <div class="container">
         <div class="realtime">
             <div class="realtime-col realtime-col-satu">
-                <div class="kolom-lom card-satu">
-                    <h5>Realtime Live Chat</h5>
-                    <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit. Tenetur quae dignissimos atque minima
-                        sit amet</p>
-                </div>
-                <div class="kolom-lom card-dua">
-                    <h5>Chart Modules</h5>
-                    <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit. Tenetur quae dignissimos atque minima
-                        sit amet</p>
-                </div>
-                <div class="kolom-lom card-tiga">
-                    <h5>Social Assistant</h5>
-                    <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit. Tenetur quae dignissimos atque minima
-                        sit amet</p>
-                </div>
-                <div class="kolom-lom card-empat">
-                    <h5>AI Solutions</h5>
-                    <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit. Tenetur quae dignissimos atque minima
-                        sit amet</p>
-                </div>
+                @foreach ($services as $item)
+                    <div class="kolom-lom card-satu">
+                        <h5>{{ $item->title_service }}</h5>
+                        <p>Lorem ipsum dolor sit amet, conse ctetur adipi sicing elit. Tenetur quae dignissimos atque
+                            minima
+                            sit amet</p>
+                    </div>
+                @endforeach
             </div>
             <div class="realtime-col realtime-col-dua">
                 <h4>A Straight Forward Structare for Powerful Automation Results.</h4>
@@ -47,7 +35,7 @@
                     Quisque aliquam posuere tortor, sit amet convallis nunc scelerisque in.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo quo laboriosam, dolorum ducimus
                     aliquam consequuntur!</p>
-                <button class="btn  btn-primary">Read More</button>
+                <a href="{{ route('layanan.frontend') }}" class="btn  btn-primary">Read More</a>
             </div>
         </div>
     </div>
@@ -57,15 +45,17 @@
 <!-- 3. Awal Section  A Straight Forward -->
 <section class="bub-right">
     <div class="container container-result">
-        <div class="result">
-            <h4>{{ $abouts->title_about }}</h4>
-            <p>{!! $abouts->description_about !!}</p>
-            <p></p>
-            <button class="btn btn-primary">READ MORE</button>
-        </div>
-        <div class="img-result">
-            <img src="assets/uploads/{{ $abouts->img_about }}" alt="" class="gambar-result">
-        </div>
+        @if ($abouts != null)
+            <div class="result">
+                <h4>{{ $abouts->title_about }}</h4>
+                <p>{!! $abouts->description_about !!}</p>
+                <p></p>
+                <button class="btn btn-primary">READ MORE</button>
+            </div>
+            <div class="img-result">
+                <img src="assets/uploads/{{ $abouts->img_about }}" alt="" class="gambar-result">
+            </div>
+        @endif
     </div>
 </section>
 <!-- / 3. Akhir Section  A Straight Forward -->

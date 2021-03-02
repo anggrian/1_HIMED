@@ -19,6 +19,11 @@ class ServiceController extends Controller
         return view('Backend_admin.Contents.Page.service', ['services' => $layanan]);
     }
 
+    public function frontend_service()
+    {
+        $layanan = DB::table('services')->get();
+        return view('Frontend.Service.frontend_service', ['services' => $layanan]);
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -53,6 +53,8 @@ Route::post('layanan', [ServiceController::class, 'store'])->name('layanan');
 Route::delete('layanan/{layanan}', [ServiceController::class, 'destroy'])->name('layanan.delete');
 Route::get('layanan/edit/{id}', [ServiceController::class, 'edit'])->name('layanan.edit');
 Route::put('layanan/update/{id}', [ServiceController::class, 'update'])->name('layanan.update');
+Route::get('layanan/frontend', [ServiceController::class, 'frontend_service'])->name('layanan.frontend');
+
 // profil
 Route::get('profil', [ProfileController::class, 'index'])->name('profil');
 

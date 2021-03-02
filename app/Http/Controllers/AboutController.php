@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class AboutController extends Controller
 {
@@ -148,6 +149,14 @@ class AboutController extends Controller
     public function destroy($about)
     {
         $tentang = About::find($about);
+        $image_path = "assets/uploads/" . $tentang->img_about;
+
+        //dd($tentang);
+
+        if (file_exists(public_path($image_path))) {
+            //File::delete($image_path);
+            unlink(public_path($image_path));
+        }
         $tentang->delete();
         return redirect('tentang');
     }
