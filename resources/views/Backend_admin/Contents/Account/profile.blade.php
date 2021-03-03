@@ -34,15 +34,15 @@
                             </svg>
                             <!-- <small class="fas fa-check-circle text-primary ml-1" data-toggle="tooltip" data-placement="right" title="Verified" data-fa-transform="shrink-4 down-2"></small> Font Awesome fontawesome.com -->
                         </h4>
-                        <h5 class="fs-0 font-weight-normal">Senior Software Engineer at Technext Limited</h5>
-                        <p class="text-500">New York, USA</p>
-                        <button class="btn btn-primary btn-sm px-3" type="button">Following</button>
-                        <button class="btn btn-success btn-sm px-3 ml-2" type="button">Message</button>
+                        <h5 class="fs-0 font-weight-normal">{{ $users->email }}</h5>
+                        <p class="text-500">Senior Software Engineer at Technext Limited</p>
+                        <button class="btn btn-primary btn-sm px-3" type="button">Lengkapi Data</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
 
 @endsection

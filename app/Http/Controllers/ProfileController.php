@@ -17,6 +17,7 @@ class ProfileController extends Controller
     public function index()
     {
         $profil = DB::table('users')->first();
+
         // dd($profil);
         return view('Backend_admin.Contents.Account.profile', ['users' => $profil]);
     }
