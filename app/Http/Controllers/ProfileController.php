@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class ProfileController extends Controller
 {
@@ -14,7 +16,9 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('Backend_admin.Contents.Account.profile');
+        $profil = DB::table('users')->first();
+        // dd($profil);
+        return view('Backend_admin.Contents.Account.profile', ['users' => $profil]);
     }
 
     /**
