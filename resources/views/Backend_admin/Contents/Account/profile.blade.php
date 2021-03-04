@@ -36,7 +36,8 @@
                         </h4>
                         <h5 class="fs-0 font-weight-normal">{{ $users->email }}</h5>
                         <p class="text-500">Senior Software Engineer at Technext Limited</p>
-                        <button class="btn btn-primary btn-sm px-3" type="button">Lengkapi Data</button>
+                        <a href="{{ route('lengkapi_data') }}" class="btn btn-primary btn-sm px-3" type="button">Lengkapi
+                            Data</a>
                     </div>
                 </div>
             </div>

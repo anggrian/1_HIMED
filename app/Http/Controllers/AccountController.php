@@ -16,15 +16,19 @@ class AccountController extends Controller
      */
     public function index()
     {
-        $fitur = DB::table('users')->get();
 
-        // return view('Backend_admin.Contents.Account.profile', ['users' => $fitur]);
-        return view('Backend_admin.Contents.Account.account_data');
-    }
-    public function account()
-    {
 
-        return view('Backend_admin.Contents.Account.account_data');
+        //
+        //
+        $accounts = DB::table('accounts')
+            ->join('users', 'accounts.users_id', '=', 'users.id')
+            ->select('accounts.*', 'users.name', 'users.email')
+            ->get();
+        $users = DB::table('users')->get();
+        dd($users);
+
+        return view('Backend_admin.Contents.Account.account_data', compact('accounts', 'users'));
+        //
     }
 
     /**
@@ -45,7 +49,21 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('img_profile')) {
+            $img_profile = $request->file('img_profile');
+            $tujuan_upload = 'assets/uploads/';
+            $nama_file = time() . "." . $img_profile->getClientOriginalExtension();
+            $img_profile->move($tujuan_upload, $nama_file);
+            DB::table('accounts')->insert([
+                'telphone' => $request->telphone,
+                'users_id' => $request->users_id,
+                'tgl_lahir' => $request->tgl_lahir,
+                'img_profile' => $nama_file
+            ]);
+            dd($request->all());
+        }
+
+        return redirect('akun');
     }
 
     /**

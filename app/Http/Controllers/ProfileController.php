@@ -22,6 +22,10 @@ class ProfileController extends Controller
         return view('Backend_admin.Contents.Account.profile', ['users' => $profil]);
     }
 
+    public function lengkapi_data()
+    {
+        return view('Backend_admin.Contents.Account.input_data');
+    }
     /**
      * Show the form for creating a new resource.
      *
