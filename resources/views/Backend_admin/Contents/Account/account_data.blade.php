@@ -23,11 +23,12 @@
                             <th>Aksi</th>
                         </tr>
                     </thead>
-                    @foreach ($accounts as $item)
+                    @foreach ($users as $item)
                         <tbody>
                             <tr>
                                 <td>
-                                    <img src="../assets/uploads/{{ $item->img_profile }}" width="50" alt="gak nampil">
+                                    <img src="../assets/uploads/profiles/{{ $item->img_profile }}" width="50"
+                                        alt=" Image Null">
                                 </td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->email }}</td>

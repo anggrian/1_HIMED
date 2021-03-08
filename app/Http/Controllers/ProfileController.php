@@ -18,10 +18,8 @@ class ProfileController extends Controller
     public function index()
     {
         $login = Auth::user();
-        $users = DB::table('users')->first();
-
         // dd($login);
-        return view('Backend_admin.Contents.Account.profile', compact('login', 'users'));
+        return view('Backend_admin.Contents.Account.profile', compact('login'));
     }
 
     public function lengkapi_data()
@@ -31,6 +29,16 @@ class ProfileController extends Controller
         // dd($login);
 
         return view('Backend_admin.Contents.Account.input_data', compact('login'));
+    }
+
+    public function profil_akun()
+    {
+
+        $users = DB::table('users')->get();
+
+        // dd($login);
+
+        return view('Backend_admin.Contents.Account.account_data', compact('users'));
     }
     /**
      * Show the form for creating a new resource.
@@ -55,16 +63,18 @@ class ProfileController extends Controller
             $tujuan_upload = 'assets/uploads/profiles';
             $nama_file = time() . "." . $img_profile->getClientOriginalExtension();
             $img_profile->move($tujuan_upload, $nama_file);
-            DB::table('accounts')->insert([
+            DB::table('users')->insert([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $request->password,
                 'telphone' => $request->telphone,
-                // 'users_id' => $request->users_id,
                 'tgl_lahir' => $request->tgl_lahir,
                 'img_profile' => $nama_file
             ]);
             // dd($request->all());
         }
 
-        return redirect('profil');
+        return redirect('akun');
     }
 
     /**

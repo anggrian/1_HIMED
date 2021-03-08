@@ -59,11 +59,8 @@ Route::group(['middleware' => 'auth'], function () {
     // profil
     Route::get('profil', [ProfileController::class, 'index'])->name('profil');
     Route::get('profil/lengkapi_data', [ProfileController::class, 'lengkapi_data'])->name('lengkapi_data');
-    Route::post('profile/create', [ProfileController::class, 'store'])->name('profil.create');
-
-    //akun
-    Route::get('akun', [AccountController::class, 'index'])->name('akun');
-    Route::post('akun/create', [AccountController::class, 'store'])->name('akun.create');
+    Route::post('profil/create', [ProfileController::class, 'store'])->name('profil.create');
+    Route::get('akun', [ProfileController::class, 'profil_akun'])->name('akun');
 });
 
 

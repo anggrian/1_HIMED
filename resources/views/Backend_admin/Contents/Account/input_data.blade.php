@@ -31,11 +31,15 @@
                         <label class="form-label" for="tgl_lahir">Tanggal Lahir</label>
                         <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir" placeholder="Tanggal Lahir">
                     </div>
+
+                    {{-- <input class="form-control" type="hidden" name="password" id="password"
+                        value="{{ $login->password }}"> --}}
+
                     <div class="form-group">
                         <label class="form-label w-100" for="img_profile">Pilih Profil</label>
                         <input type="file" name="img_profile" id="img_profile">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Update Data</button>
                 </form>
             </div>
         </div>
