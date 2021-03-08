@@ -29,6 +29,7 @@ class FeatureController extends Controller
     public function frontend_fitur($main_title)
     {
         $fitur = DB::table('features')->where('main_title', $main_title)->get();
+        // dd($fitur);
         return view('Frontend.feature.frontend_feature', ['features' => $fitur]);
     }
 

@@ -23,20 +23,18 @@
                             <th>Aksi</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            @foreach ($users as $item)
-
+                    @foreach ($accounts as $item)
+                        <tbody>
+                            <tr>
                                 <td>
-                                    <img src="{{ asset('assets/ANGGRIAN.jpg') }}" width="48" height="48"
-                                        class="rounded-circle mr-2" alt="Avatar">
+                                    <img src="../assets/uploads/{{ $item->img_profile }}" width="50" alt="gak nampil">
                                 </td>
                                 <td>{{ $item->name }}</td>
-                                <td>Anggr14n@gmail.com</td>
-                                <td>864-348-0485</td>
-                                <td>June 21, 1961</td>
-                                <td>19-01-2021</td>
-                                <td>19-03-2021</td>
+                                <td>{{ $item->email }}</td>
+                                <td>{{ $item->telphone }}</td>
+                                <td>{{ $item->tgl_lahir }}</td>
+                                <td>{{ $item->created_at }}</td>
+                                <td>{{ $item->updated_at }}</td>
                                 <td class="table-action">
                                     <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -54,9 +52,9 @@
                                             </path>
                                         </svg></a>
                                 </td>
-                            @endforeach
-                        </tr>
-                    </tbody>
+                            </tr>
+                        </tbody>
+                    @endforeach
                 </table>
             </div>
         </div>

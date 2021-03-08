@@ -27,6 +27,7 @@ class HomeController extends Controller
             ->join('features', 'packages.id', '=', 'features.packages_id')
             ->select('packages.*', 'features.main_title')
             ->get();
+        // dd($services);
 
         return view('Frontend.index', compact('abouts', 'packages', 'services'));
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
@@ -16,15 +17,20 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $profil = DB::table('users')->first();
+        $login = Auth::user();
+        $users = DB::table('users')->first();
 
-        // dd($profil);
-        return view('Backend_admin.Contents.Account.profile', ['users' => $profil]);
+        // dd($login);
+        return view('Backend_admin.Contents.Account.profile', compact('login', 'users'));
     }
 
     public function lengkapi_data()
     {
-        return view('Backend_admin.Contents.Account.input_data');
+
+        $login = Auth::user();
+        // dd($login);
+
+        return view('Backend_admin.Contents.Account.input_data', compact('login'));
     }
     /**
      * Show the form for creating a new resource.
@@ -44,7 +50,21 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('img_profile')) {
+            $img_profile = $request->file('img_profile');
+            $tujuan_upload = 'assets/uploads/profiles';
+            $nama_file = time() . "." . $img_profile->getClientOriginalExtension();
+            $img_profile->move($tujuan_upload, $nama_file);
+            DB::table('accounts')->insert([
+                'telphone' => $request->telphone,
+                // 'users_id' => $request->users_id,
+                'tgl_lahir' => $request->tgl_lahir,
+                'img_profile' => $nama_file
+            ]);
+            // dd($request->all());
+        }
+
+        return redirect('profil');
     }
 
     /**

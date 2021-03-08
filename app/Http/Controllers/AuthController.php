@@ -49,7 +49,7 @@ class AuthController extends Controller
             'password' => bcrypt($request->password)
         ]);
 
-        return redirect()->back();
+        return redirect()->route('login');
     }
 
     public function logout()

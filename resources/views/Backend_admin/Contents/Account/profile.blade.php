@@ -10,14 +10,16 @@
                 <div class="bg-holder rounded-soft rounded-bottom-0"></div>
                 <!--/.bg-holder-->
                 <div class="avatar_buat avatar-5xl_buat avatar-profile_buat">
-                    <img class="rounded-circle img-thumbnail shadow-sm" src="{{ asset('assets/ANGGRIAN.jpg') }}"
-                        width="200" alt="xxxxxxxxxxxxxxxxxxxxxxxxx">
+                    <img class="rounded-circle img-thumbnail shadow-sm" src="../assets/uploads/{{ $login->img_profile }}"
+                        width="200" alt="gak nampil">
+                    {{-- <img class="rounded-circle img-thumbnail shadow-sm" src="{{ asset('assets/ANGGRIAN.jpg') }}"
+                        width="200" alt="xxxxxxxxxxxxxxxxxxxxxxxxx"> --}}
                 </div>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h4 class="mb-1">{{ $users->name }}<svg
+                        <h4 class="mb-1">{{ $login->name }}<svg
                                 class="svg-inline--fa fa-check-circle fa-w-16 text-primary ml-1" data-toggle="tooltip"
                                 data-placement="right" title="" data-fa-transform="shrink-4 down-2"
                                 aria-labelledby="svg-inline--fa-title-PNLr43yIculb" data-prefix="fas"
@@ -34,7 +36,7 @@
                             </svg>
                             <!-- <small class="fas fa-check-circle text-primary ml-1" data-toggle="tooltip" data-placement="right" title="Verified" data-fa-transform="shrink-4 down-2"></small> Font Awesome fontawesome.com -->
                         </h4>
-                        <h5 class="fs-0 font-weight-normal">{{ $users->email }}</h5>
+                        <h5 class="fs-0 font-weight-normal">{{ $login->email }}</h5>
                         <p class="text-500">Senior Software Engineer at Technext Limited</p>
                         <a href="{{ route('lengkapi_data') }}" class="btn btn-primary btn-sm px-3" type="button">Lengkapi
                             Data</a>

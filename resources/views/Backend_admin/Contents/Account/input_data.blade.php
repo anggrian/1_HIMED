@@ -10,21 +10,17 @@
                 <h5 class="card-title">Lengkapi Data Akun</h5>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route('akun.create') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('profil.create') }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
-
-
-                    <div class="form-group">
-                        <label class="form-label" for="name">ID User</label>
-                        <input type="text" class="form-control" name="name" id="name">
-                    </div>
+                    {{-- <input class="form-control" type="hidden" name="users_id" id="users_id" value="{{ $login->id }}"> --}}
                     <div class="form-group">
                         <label class="form-label" for="name">Nama</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Nama">
+                        <input class="form-control" name="name" id="name" value="{{ $login->name }}" readonly>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="email">Email</label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                        <input type="email" class="form-control" name="email" id="email" value="{{ $login->email }}"
+                            readonly>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="telphone">Nomor Telphone</label>

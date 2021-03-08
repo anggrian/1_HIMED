@@ -38,9 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('paket/{paket}', [PackageController::class, 'destroy'])->name('paket.delete');
     Route::get('paket/edit/{id}', [PackageController::class, 'edit'])->name('paket.edit');
     Route::put('paket/update/{id}', [PackageController::class, 'update'])->name('paket.update');
-    //akun
-    Route::get('akun', [AccountController::class, 'index'])->name('akun');
-    Route::post('akun/create', [AccountController::class, 'store'])->name('akun.create');
+
 
     // tentang
     Route::post('tentang', [AboutController::class, 'store'])->name('tentang');
@@ -60,7 +58,12 @@ Route::group(['middleware' => 'auth'], function () {
 
     // profil
     Route::get('profil', [ProfileController::class, 'index'])->name('profil');
-    Route::get('lengkapi_data', [ProfileController::class, 'lengkapi_data'])->name('lengkapi_data');
+    Route::get('profil/lengkapi_data', [ProfileController::class, 'lengkapi_data'])->name('lengkapi_data');
+    Route::post('profile/create', [ProfileController::class, 'store'])->name('profil.create');
+
+    //akun
+    Route::get('akun', [AccountController::class, 'index'])->name('akun');
+    Route::post('akun/create', [AccountController::class, 'store'])->name('akun.create');
 });
 
 

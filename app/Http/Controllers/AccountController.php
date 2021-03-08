@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Account;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\DB;
 
 class AccountController extends Controller
@@ -22,12 +24,14 @@ class AccountController extends Controller
         //
         $accounts = DB::table('accounts')
             ->join('users', 'accounts.users_id', '=', 'users.id')
-            ->select('accounts.*', 'users.name', 'users.email')
+            ->select('accounts.*', 'users.name', 'users.email', 'users.created_at', 'users.updated_at')
             ->get();
         $users = DB::table('users')->get();
-        dd($users);
+        $login = Auth::user();
 
-        return view('Backend_admin.Contents.Account.account_data', compact('accounts', 'users'));
+        // dd($login);
+
+        return view('Backend_admin.Contents.Account.account_data', compact('accounts', 'users', 'login'));
         //
     }
 
@@ -60,7 +64,7 @@ class AccountController extends Controller
                 'tgl_lahir' => $request->tgl_lahir,
                 'img_profile' => $nama_file
             ]);
-            dd($request->all());
+            // dd($request->all());
         }
 
         return redirect('akun');
