@@ -24,16 +24,14 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="telphone">Nomor Telphone</label>
-                        <input type="number" class="form-control" name="telphone" id="telphone"
-                            placeholder="Nomor Telphone">
+                        <input type="number" class="form-control" name="telphone" id="telphone" placeholder="Nomor Telphone"
+                            value="{{ $login->telphone }}">
                     </div>
-                    <div class="form-group">
+                    <div class=" form-group">
                         <label class="form-label" for="tgl_lahir">Tanggal Lahir</label>
-                        <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir" placeholder="Tanggal Lahir">
+                        <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir" placeholder="Tanggal Lahir"
+                            value="{{ $login->tgl_lahir }}">
                     </div>
-
-                    {{-- <input class="form-control" type="hidden" name="password" id="password"
-                        value="{{ $login->password }}"> --}}
 
                     <div class="form-group">
                         <label class="form-label w-100" for="img_profile">Pilih Profil</label>

@@ -10,10 +10,8 @@
                 <div class="bg-holder rounded-soft rounded-bottom-0"></div>
                 <!--/.bg-holder-->
                 <div class="avatar_buat avatar-5xl_buat avatar-profile_buat">
-                    <img class="rounded-circle img-thumbnail shadow-sm" src="../assets/uploads/{{ $login->img_profile }}"
-                        width="200" alt="gak nampil">
-                    {{-- <img class="rounded-circle img-thumbnail shadow-sm" src="{{ asset('assets/ANGGRIAN.jpg') }}"
-                        width="200" alt="xxxxxxxxxxxxxxxxxxxxxxxxx"> --}}
+                    <img class="rounded-circle img-thumbnail shadow-sm"
+                        src="../assets/uploads/profiles/{{ $login->img_profile }}" width="200" alt="gak nampil">
                 </div>
             </div>
             <div class="card-body">

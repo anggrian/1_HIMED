@@ -58,20 +58,30 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
+        $login = Auth::user();
+
         if ($request->hasFile('img_profile')) {
             $img_profile = $request->file('img_profile');
             $tujuan_upload = 'assets/uploads/profiles';
             $nama_file = time() . "." . $img_profile->getClientOriginalExtension();
             $img_profile->move($tujuan_upload, $nama_file);
-            DB::table('users')->insert([
+            DB::table('users')->where('id', $login->id)->update([
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => $request->password,
+                // 'password' => $request->password,
                 'telphone' => $request->telphone,
                 'tgl_lahir' => $request->tgl_lahir,
                 'img_profile' => $nama_file
             ]);
             // dd($request->all());
+        } else {
+            DB::table('users')->where('id', $login->id)->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                // 'password' => $request->password,
+                'telphone' => $request->telphone,
+                'tgl_lahir' => $request->tgl_lahir
+            ]);
         }
 
         return redirect('akun');

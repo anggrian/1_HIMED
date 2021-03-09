@@ -46,7 +46,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('tentang/{tentang}', [AboutController::class, 'destroy'])->name('tentang.delete');
     Route::get('tentang/edit{id}', [AboutController::class, 'edit'])->name('tentang.edit');
     Route::put('tentang/update{id}', [AboutController::class, 'update'])->name('tentang.update');
-    Route::get('About-Us', [AboutController::class, 'frontend_about'])->name('tentang.frontend');
 
     // layanan
     Route::get('layanan', [ServiceController::class, 'index'])->name('layanan');
@@ -54,7 +53,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('layanan/{layanan}', [ServiceController::class, 'destroy'])->name('layanan.delete');
     Route::get('layanan/edit/{id}', [ServiceController::class, 'edit'])->name('layanan.edit');
     Route::put('layanan/update/{id}', [ServiceController::class, 'update'])->name('layanan.update');
-    Route::get('layanan/frontend', [ServiceController::class, 'frontend_service'])->name('layanan.frontend');
 
     // profil
     Route::get('profil', [ProfileController::class, 'index'])->name('profil');
@@ -62,6 +60,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('profil/create', [ProfileController::class, 'store'])->name('profil.create');
     Route::get('akun', [ProfileController::class, 'profil_akun'])->name('akun');
 });
+// FRONTEND
+Route::get('About-Us', [AboutController::class, 'frontend_about'])->name('tentang.frontend');
+Route::get('layanan/frontend', [ServiceController::class, 'frontend_service'])->name('layanan.frontend');
 
 
 
