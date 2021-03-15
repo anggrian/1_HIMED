@@ -20,38 +20,50 @@ Route::get('/register', [AuthController::class, 'getRegister'])->middleware('gue
 Route::post('/register', [AuthController::class, 'postRegister'])->middleware('guest');
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 Route::get('/home', [AuthController::class, 'index'])->middleware('auth')->name('home');
-//fitur
-Route::resource('fitur', FeatureController::class);
-Route::post('/fitur', [FeatureController::class, 'store'])->name('fitur');
-Route::delete('fitur/{fitur}', [FeatureController::class, 'destroy'])->name('delete_fitur');
-// Route::patch('fitur/{fitur}', [FeatureController::class, 'update']);
-Route::get('fitur/edit/{id}', [FeatureController::class, 'edit'])->name('fitur.edit');
-Route::put('fitur/update/{id}', [FeatureController::class, 'update'])->name('fitur.update');
-//paket
-// Route::resource('paket', PackageController::class);
-// Route::post('paket', [PackageController::class, 'store'])->name('paket');
-Route::get('paket', [PackageController::class, 'index'])->name('paket');
-Route::post('paket', [PackageController::class, 'store'])->name('paket');
-Route::delete('paket/{paket}', [PackageController::class, 'destroy'])->name('paket.delete');
-Route::get('paket/edit/{id}', [PackageController::class, 'edit'])->name('paket.edit');
-Route::put('paket/update/{id}', [PackageController::class, 'update'])->name('paket.update');
-//akun
-Route::resource('akun', AccountController::class);
-Route::post('akun', [AccountController::class, 'account'])->name('akun');
-// tentang
-Route::post('tentang', [AboutController::class, 'store'])->name('tentang');
-Route::get('tentang', [AboutController::class, 'index'])->name('tentang');
-Route::delete('tentang/{tentang}', [AboutController::class, 'destroy'])->name('tentang.delete');
-Route::get('tentang/edit{id}', [AboutController::class, 'edit'])->name('tentang.edit');
-Route::put('tentang/update{id}', [AboutController::class, 'update'])->name('tentang.update');
-// layanan
-Route::get('layanan', [ServiceController::class, 'index'])->name('layanan');
-Route::post('layanan', [ServiceController::class, 'store'])->name('layanan');
-Route::delete('layanan/{layanan}', [ServiceController::class, 'destroy'])->name('layanan.delete');
-Route::get('layanan/edit/{id}', [ServiceController::class, 'edit'])->name('layanan.edit');
-Route::put('layanan/update/{id}', [ServiceController::class, 'update'])->name('layanan.update');
-// profil
-Route::get('profil', [ProfileController::class, 'index'])->name('profil');
+
+Route::group(['middleware' => 'auth'], function () {
+    //fitur
+    Route::resource('fitur', FeatureController::class);
+    Route::post('/fitur', [FeatureController::class, 'store'])->name('fitur');
+    Route::delete('fitur/{fitur}', [FeatureController::class, 'destroy'])->name('delete_fitur');
+    // Route::patch('fitur/{fitur}', [FeatureController::class, 'update']);
+    Route::get('fitur/edit/{id}', [FeatureController::class, 'edit'])->name('fitur.edit');
+    Route::put('fitur/update/{id}', [FeatureController::class, 'update'])->name('fitur.update');
+    Route::get('frontend/{main_title}', [FeatureController::class, 'frontend_fitur'])->name('frontend.fitur');
+    //paket
+    // Route::resource('paket', PackageController::class);
+    // Route::post('paket', [PackageController::class, 'store'])->name('paket');
+    Route::get('paket', [PackageController::class, 'index'])->name('paket');
+    Route::post('paket', [PackageController::class, 'store'])->name('paket');
+    Route::delete('paket/{paket}', [PackageController::class, 'destroy'])->name('paket.delete');
+    Route::get('paket/edit/{id}', [PackageController::class, 'edit'])->name('paket.edit');
+    Route::put('paket/update/{id}', [PackageController::class, 'update'])->name('paket.update');
+
+
+    // tentang
+    Route::post('tentang', [AboutController::class, 'store'])->name('tentang');
+    Route::get('tentang', [AboutController::class, 'index'])->name('tentang');
+    Route::delete('tentang/{tentang}', [AboutController::class, 'destroy'])->name('tentang.delete');
+    Route::get('tentang/edit{id}', [AboutController::class, 'edit'])->name('tentang.edit');
+    Route::put('tentang/update{id}', [AboutController::class, 'update'])->name('tentang.update');
+
+    // layanan
+    Route::get('layanan', [ServiceController::class, 'index'])->name('layanan');
+    Route::post('layanan', [ServiceController::class, 'store'])->name('layanan');
+    Route::delete('layanan/{layanan}', [ServiceController::class, 'destroy'])->name('layanan.delete');
+    Route::get('layanan/edit/{id}', [ServiceController::class, 'edit'])->name('layanan.edit');
+    Route::put('layanan/update/{id}', [ServiceController::class, 'update'])->name('layanan.update');
+
+    // profil
+    Route::get('profil', [ProfileController::class, 'index'])->name('profil');
+    Route::get('profil/lengkapi_data', [ProfileController::class, 'lengkapi_data'])->name('lengkapi_data');
+    Route::post('profil/create', [ProfileController::class, 'store'])->name('profil.create');
+    Route::get('akun', [ProfileController::class, 'profil_akun'])->name('akun');
+});
+// FRONTEND
+Route::get('About-Us', [AboutController::class, 'frontend_about'])->name('tentang.frontend');
+Route::get('layanan/frontend', [ServiceController::class, 'frontend_service'])->name('layanan.frontend');
+
 
 
 
@@ -66,12 +78,19 @@ use App\Http\Controllers\PostController;
 Route::get('/blog', [BlogController::class, 'index']);
 
 Route::get('/isi-post/{slug}', [BlogController::class, 'isi_blog'])->name('blog.isi');
+<<<<<<< HEAD
 Route::get('/list-post', [BlogController::class, 'list_blog'])->name('blog.list');
 Route::get('/list-category/{category}', [BlogController::class, 'list_category'])->name('blog.category');
 Route::get('/cari', [BlogController::class, 'cari'])->name('blog.cari');
+=======
+Route::get('/list-post', 'BlogController@list_blog')->name('blog.list');
+Route::get('/list-category/{category}', 'BlogController@list_category')->name('blog.category');
+Route::get('/cari', 'BlogController@cari')->name('blog.cari');
+Route::resource('/category', CategoryController::class);
+>>>>>>> 563a2105213b8dd1958953ab55c134c9207294d7
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('/category', CategoryController::class);
+    //Route::resource('/category', CategoryController::class);
     Route::resource('/tag', TagController::class);
 
     Route::get('/post/tampil_hapus', [PostController::class, 'tampil_hapus'])->name('post.tampil_hapus');

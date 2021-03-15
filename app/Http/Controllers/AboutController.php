@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 class AboutController extends Controller
 {
@@ -17,6 +18,13 @@ class AboutController extends Controller
     {
         $tentang = DB::table('abouts')->get();
         return view('Backend_admin.Contents.Page.about', ['abouts' => $tentang]);
+    }
+    public function frontend_about()
+    {
+        // $tentang = DB::table('abouts')->get();
+        // return view('Backend_admin.Contents.Page.about', ['abouts' => $tentang]);
+        $tentang_frontend = About::latest('id')->first();
+        return view('Frontend.About_Us.frontend_about', ['abouts' => $tentang_frontend]);
     }
 
     /**
@@ -141,6 +149,14 @@ class AboutController extends Controller
     public function destroy($about)
     {
         $tentang = About::find($about);
+        $image_path = "assets/uploads/" . $tentang->img_about;
+
+        //dd($tentang);
+
+        if (file_exists(public_path($image_path))) {
+            //File::delete($image_path);
+            unlink(public_path($image_path));
+        }
         $tentang->delete();
         return redirect('tentang');
     }

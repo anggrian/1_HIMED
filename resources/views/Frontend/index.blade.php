@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('style_frontend/assett/navbar/navbar.css')}}">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('style_frontend/assett/navbar/navbar.css') }}">
+
     <!-- Font Awesome -->
-    <link href="{{ asset('style_frontend/fontawesome/css/all.css')}}" rel="stylesheet">
+    <link href="{{ asset('style_frontend/fontawesome/css/all.css') }}" rel="stylesheet">
     <!--load all styles -->
     <!-- Css sendiri -->
     <link rel="stylesheet" href="{{ asset('style_frontend/css/style.css') }}">
@@ -25,6 +26,7 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+
     </style>
     <!--  -->
 
@@ -40,7 +42,9 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

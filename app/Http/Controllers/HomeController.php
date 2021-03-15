@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Feature;
+use App\Models\Package;
+use App\Models\Service;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,11 +19,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $fitur = Feature::first(); //untuk menampilkan data dari yang awal
-        // $fitur = DB::table('features')->latest('id')->first();  //untuk menampilkan data dari yang akhir
+        //$tentang = About::first(); //untuk menampilkan data dari yang awal
+        $abouts = About::latest('id')->first();  //untuk menampilkan data dari yang akhir
 
-        return view('Frontend.index', ['features' => $fitur]);
+        $services = DB::table('services')->get();
+        $packages = DB::table('packages')
+            ->join('features', 'packages.id', '=', 'features.packages_id')
+            ->select('packages.*', 'features.main_title')
+            ->get();
+        // dd($services);
+
+        return view('Frontend.index', compact('abouts', 'packages', 'services'));
     }
+
 
     /**
      * Show the form for creating a new resource.
