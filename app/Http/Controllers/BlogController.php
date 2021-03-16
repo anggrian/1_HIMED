@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Posts;
-use App\Category;
+use App\Models\Posts;
+use App\Models\Category;
 
 class BlogController extends Controller
 {

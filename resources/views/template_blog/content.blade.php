@@ -1,15 +1,14 @@
 <!-- SECTION -->
-@include('template_blog.head')
+@include('template_blog.header')
 	<div class="section">
 		<!-- container -->
 		<div class="container">
-						<!-- row -->
+			<!-- row -->
 			<div id="hot-post" class="row hot-post">
 				
 				@yield('isi')
 				
 				@include('template_blog.widget')
-	
 
 		</div>
 	</div>

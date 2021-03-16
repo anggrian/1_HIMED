@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Tags;
+use App\Models\Tags;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 

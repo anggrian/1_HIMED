@@ -78,17 +78,23 @@ use App\Http\Controllers\PostController;
 Route::get('/blog', [BlogController::class, 'index']);
 
 Route::get('/isi-post/{slug}', [BlogController::class, 'isi_blog'])->name('blog.isi');
+<<<<<<< HEAD
+Route::get('/list-post', [BlogController::class, 'list_blog'])->name('blog.list');
+Route::get('/list-category/{category}', [BlogController::class, 'list_category'])->name('blog.category');
+Route::get('/cari', [BlogController::class, 'cari'])->name('blog.cari');
+=======
 Route::get('/list-post', 'BlogController@list_blog')->name('blog.list');
 Route::get('/list-category/{category}', 'BlogController@list_category')->name('blog.category');
 Route::get('/cari', 'BlogController@cari')->name('blog.cari');
 Route::resource('/category', CategoryController::class);
+>>>>>>> 563a2105213b8dd1958953ab55c134c9207294d7
 
 Route::group(['middleware' => 'auth'], function () {
     //Route::resource('/category', CategoryController::class);
     Route::resource('/tag', TagController::class);
 
-    Route::get('/post/tampil_hapus', 'PostController@tampil_hapus')->name('post.tampil_hapus');
-    Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');
-    Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
+    Route::get('/post/tampil_hapus', [PostController::class, 'tampil_hapus'])->name('post.tampil_hapus');
+    Route::get('/post/restore/{id}', [PostController::class, 'restore'])->name('post.restore');
+    Route::delete('/post/kill/{id}', [PostController::class, 'kill'])->name('post.kill');
     Route::resource('/post', PostController::class);
 });

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Posts;
-use App\Category;
-use App\Tags;
+use App\Models\Posts;
+use App\Models\Category;
+use App\Models\Tags;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

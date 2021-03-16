@@ -1,126 +1,84 @@
-		<div class="col-md-4">
-					<!-- ad widget-->
-					<div class="aside-widget text-center">
-						<a href="#" style="display: inline-block;margin: auto;">
-							<img class="img-responsive" src="./img/ad-3.jpg" alt="">
-						</a>
-					</div>
-					<!-- /ad widget -->
-
-					<!-- social widget -->
-					<div class="aside-widget">
-						<div class="section-title">
-							<h2 class="title">Social Media</h2>
-						</div>
-						<div class="social-widget">
-							<ul>
-								<li>
-									<a href="#" class="social-facebook">
-										<i class="fa fa-facebook"></i>
-										<span>21.2K<br>Followers</span>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="social-twitter">
-										<i class="fa fa-twitter"></i>
-										<span>10.2K<br>Followers</span>
-									</a>
-								</li>
-								<li>
-									<a href="#" class="social-google-plus">
-										<i class="fa fa-google-plus"></i>
-										<span>5K<br>Followers</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!-- /social widget -->
-
-					<!-- category widget -->
-					<div class="aside-widget">
-						<div class="section-title">
-							<h2 class="title">Categories</h2>
-						</div>
-						<div class="category-widget">
-							<ul>
-								@foreach($category_widget as $hasil)
-								<li><a href="{{ route('blog.category', $hasil->slug) }}">{{ $hasil->name }} <span>{{ $hasil->posts->count() }}</span></a></li>
-								@endforeach
-							</ul>
-						</div>
-					</div>
-					<!-- /category widget -->
-
-					<!-- newsletter widget -->
-					<div class="aside-widget">
-						<div class="section-title">
-							<h2 class="title">Newsletter</h2>
-						</div>
-						<div class="newsletter-widget">
-							<form>
-								<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
-								<input class="input" name="newsletter" placeholder="Enter Your Email">
-								<button class="primary-button">Subscribe</button>
-							</form>
-						</div>
-					</div>
-					<!-- /newsletter widget -->
-
-					<!-- post widget -->
-					<div class="aside-widget">
-						<div class="section-title">
-							<h2 class="title">Popular Posts</h2>
-						</div>
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="./img/widget-3.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Lifestyle</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="./img/widget-2.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Technology</a>
-									<a href="category.html">Lifestyle</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Mel ut impetus suscipit tincidunt. Cum id ullum laboramus persequeris.</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="./img/widget-4.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Health</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Postea senserit id eos, vivendo periculis ei qui</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
-
-						<!-- post -->
-						<div class="post post-widget">
-							<a class="post-img" href="blog-post.html"><img src="./img/widget-5.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-category">
-									<a href="category.html">Health</a>
-									<a href="category.html">Lifestyle</a>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Sed ut perspiciatis, unde omnis iste natus error sit</a></h3>
-							</div>
-						</div>
-						<!-- /post -->
-					</div>
-					<!-- /post widget -->
-				</div>
+<aside class="col-md-4 px-4">
+        <!-- Social Links -->
+        <div class="social-links row text-center">
+            <div class="col-sm-4  py-5">
+                <a class="social-link w-100" href="">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                </a> 
+            </div>
+            <div class="col-sm-4  py-5 secondary-color">
+                <a class="social-link w-100" href="">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a> 
+            </div>
+            <div class="col-sm-4  py-5">
+                <a class="social-link w-100" href="">
+                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a> 
+            </div>
+        </div>
+        <h4 class="aside-heading mt-4 mb-3 pl-2">Popular Authors</h4>
+        <article class="row author mb-3">
+            <div class="col-sm-4">
+                <img src="{{ asset('assets/frontend/img/Our-Services/s3.png') }}" alt="" class="img-fluid rounded-circle">
+            </div>
+            <div class="col-sm-8">  
+                <h5 class="m-0">Haspan Elkia</h5>
+                <p class="m-0">It is a long established fact that a reader will be distracted.</p>
+                <div class="author-social-links">
+                    <a href="#"><i class="fa fa-facebook-official secondary-color" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play secondary-color" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </article>
+        <article class="row author mb-3">
+            <div class="col-sm-4">
+                <img src="{{ asset('assets/frontend/img/Our-Services/s3.png') }}" alt="" class="img-fluid rounded-circle">
+            </div>
+            <div class="col-sm-8">  
+                <h5 class="m-0">Haspan Elkia</h5>
+                <p class="m-0">It is a long established fact that a reader will be distracted.</p>
+                <div class="author-social-links">
+                    <a href="#"><i class="fa fa-facebook-official secondary-color" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play secondary-color" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </article>
+        <article class="row author mb-3">
+            <div class="col-sm-4">
+                <img src="{{ asset('assets/frontend/img/Our-Services/s3.png') }}" alt="" class="img-fluid rounded-circle">
+            </div>
+            <div class="col-sm-8">  
+                <h5 class="m-0">Haspan Elkia</h5>
+                <p class="m-0">It is a long established fact that a reader will be distracted.</p>
+                <div class="author-social-links">
+                    <a href="#"><i class="fa fa-facebook-official secondary-color" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play secondary-color" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </article>
+        <h4 class="aside-heading mt-4 mb-3 pl-2">Popular Category</h4>
+        <div class="badges w-100">
+            <a href="#"> Technology</a>
+            <a href="#"> Programing</a>
+            <a href="#"> Boosttrap</a>
+            <a href="#"> Javascript</a>
+            <a href="#"> Anime</a>
+            <a href="#"> Technology</a>
+            <a href="#"> Programing</a>
+            <a href="#"> Boosttrap</a>
+            <a href="#"> Javascript</a>
+            <a href="#"> Anime</a>
+            <a href="#"> Technology</a>
+            <a href="#"> Programing</a>
+            <a href="#"> Boosttrap</a>
+            <a href="#"> Javascript</a>
+            <a href="#"> Anime</a>
+        </div>
+    </aside>
+</div>
+</div>
+</section>
