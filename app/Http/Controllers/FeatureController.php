@@ -125,7 +125,13 @@ class FeatureController extends Controller
     public function destroy($feature)
     {
 
+
         $fitur = Feature::find($feature);
+        $thumbnail = "assets/uploads/" . $fitur->thumbnail;
+        if (file_exists(public_path($thumbnail))) {
+            //File::delete($thumbnail);
+            unlink(public_path($thumbnail));
+        }
         $fitur->delete();
         return redirect('fitur');
     }
