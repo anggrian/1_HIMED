@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Tags;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+
 
 class TagController extends Controller
 {
@@ -15,8 +17,9 @@ class TagController extends Controller
      */
     public function index()
     {
+        $login = Auth::user();
         $tag = Tags::paginate(10);
-        return view('Backend_admin.Contents.Blog.tag.index', compact('tag'));
+        return view('Backend_admin.Contents.Blog.tag.index', compact('tag', 'login'));
     }
 
     /**
@@ -26,7 +29,8 @@ class TagController extends Controller
      */
     public function create()
     {
-        return view('Backend_admin.Contents.Blog.tag.create');
+        $login = Auth::user();
+        return view('Backend_admin.Contents.Blog.tag.create', compact('login'));
     }
 
     /**
@@ -46,7 +50,7 @@ class TagController extends Controller
             'slug' => Str::slug($request->name)
         ]);
 
-        return redirect()->back()->with('success','Data berhasil disimpan');
+        return redirect()->back()->with('success', 'Data berhasil disimpan');
     }
 
     /**
@@ -81,7 +85,7 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => 'required|max:20|min:3'
         ]);
 
@@ -92,7 +96,7 @@ class TagController extends Controller
 
         Tags::whereId($id)->update($tag_data);
 
-        return redirect()->route('tag.index')->with('success','Data sudah diupdate');
+        return redirect()->route('tag.index')->with('success', 'Data sudah diupdate');
     }
 
     /**
@@ -106,6 +110,6 @@ class TagController extends Controller
         $tags = Tags::findorfail($id);
         $tags->delete();
 
-        return redirect()->back()->with('success','Data berhasil dihapus');
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }

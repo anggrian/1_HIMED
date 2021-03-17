@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+
 
 class CategoryController extends Controller
 {
@@ -14,15 +16,15 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function _invoke(){
-
-
-    } 
+    public function _invoke()
+    {
+    }
 
     public function index()
     {
+        $login = Auth::user();
         $category = Category::paginate(10);
-        return view('Backend_admin.Contents.Blog.category.index', compact('category'));
+        return view('Backend_admin.Contents.Blog.category.index', compact('category', 'login'));
     }
 
     /**
@@ -32,7 +34,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('Backend_admin.Contents.Blog.category.create');
+        $login = Auth::user();
+        return view('Backend_admin.Contents.Blog.category.create', compact('login'));
     }
 
     /**
@@ -53,7 +56,7 @@ class CategoryController extends Controller
             'slug' => Str::slug($request->name)
         ]);
 
-        return redirect()->back()->with('success','Ketegori berhasil disimpan');
+        return redirect()->back()->with('success', 'Ketegori berhasil disimpan');
     }
 
     /**
@@ -77,7 +80,6 @@ class CategoryController extends Controller
     {
         $category = Category::findorfail($id);
         return view('Backend_admin.Contents.Blog.category.edit', compact('category'));
-
     }
 
     /**
@@ -100,8 +102,7 @@ class CategoryController extends Controller
 
         Category::whereId($id)->update($category_data);
 
-        return redirect()->route('Backend_admin.Contents.Blog.category.index')->with('success','Data Berhasil di Update');
-
+        return redirect()->route('Backend_admin.Contents.Blog.category.index')->with('success', 'Data Berhasil di Update');
     }
 
     /**
@@ -115,6 +116,6 @@ class CategoryController extends Controller
         $category = Category::findorfail($id);
         $category->delete();
 
-        return redirect()->back()->with('success','Data Berhasil Dihapus');
+        return redirect()->back()->with('success', 'Data Berhasil Dihapus');
     }
 }
