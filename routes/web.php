@@ -6,7 +6,6 @@ use App\Http\Controllers\AuthController;    // Login & Register
 use App\Http\Controllers\ProfileController; // Profile	| profil
 use App\Http\Controllers\ServiceController; // Service	| layanan
 use App\Http\Controllers\AboutController;    // About	| tentang
-use App\Http\Controllers\AccountController;    // Account	| akun
 use App\Http\Controllers\PackageController;    // Package	| paket
 use App\Http\Controllers\FeatureController;    // Feature	| fitur
 
