@@ -94,11 +94,12 @@
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
+                                <span class="name_navbar">{{ $login->name }}</span>
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="{{ asset('gentelella/production/images/img.jpg') }}" alt="">
+                                    <img src="../assets/uploads/profiles/{{ $login->img_profile }}" alt="img_null">
                                 </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right"
+                                <div class=" dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('akun') }}">AKUN</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"><i
