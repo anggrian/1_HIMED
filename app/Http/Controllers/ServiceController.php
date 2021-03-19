@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ServiceController extends Controller
 {
@@ -15,8 +16,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $layanan = DB::table('services')->get();
-        return view('Backend_admin.Contents.Page.service', ['services' => $layanan]);
+        $login = Auth::user();
+        $services = DB::table('services')->get();
+        return view('Backend_admin.Contents.Page.service', compact('login', 'services'));
     }
 
     public function frontend_service()

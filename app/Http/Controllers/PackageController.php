@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PackageController extends Controller
 {
@@ -15,8 +16,9 @@ class PackageController extends Controller
      */
     public function index()
     {
-        $paket = DB::table('packages')->get();
-        return view('Backend_admin.Contents.Package.package_himed', ['packages' => $paket]);
+        $login = Auth::user();
+        $packages = DB::table('packages')->get();
+        return view('Backend_admin.Contents.Package.package_himed', compact('login', 'packages'));
     }
 
     /**

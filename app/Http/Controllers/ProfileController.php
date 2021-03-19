@@ -33,12 +33,12 @@ class ProfileController extends Controller
 
     public function profil_akun()
     {
-
+        $login = Auth::user();
         $users = DB::table('users')->get();
 
         // dd($login);
 
-        return view('Backend_admin.Contents.Account.account_data', compact('users'));
+        return view('Backend_admin.Contents.Account.account_data', compact('users', 'login'));
     }
     /**
      * Show the form for creating a new resource.

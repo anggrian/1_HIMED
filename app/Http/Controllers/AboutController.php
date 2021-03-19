@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 
 class AboutController extends Controller
 {
@@ -16,8 +16,9 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $tentang = DB::table('abouts')->get();
-        return view('Backend_admin.Contents.Page.about', ['abouts' => $tentang]);
+        $login = Auth::user();
+        $abouts = DB::table('abouts')->get();
+        return view('Backend_admin.Contents.Page.about', compact('login', 'abouts'));
     }
     public function frontend_about()
     {

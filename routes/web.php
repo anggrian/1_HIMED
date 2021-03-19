@@ -6,7 +6,6 @@ use App\Http\Controllers\AuthController;    // Login & Register
 use App\Http\Controllers\ProfileController; // Profile	| profil
 use App\Http\Controllers\ServiceController; // Service	| layanan
 use App\Http\Controllers\AboutController;    // About	| tentang
-use App\Http\Controllers\AccountController;    // Account	| akun
 use App\Http\Controllers\PackageController;    // Package	| paket
 use App\Http\Controllers\FeatureController;    // Feature	| fitur
 
@@ -78,10 +77,17 @@ use App\Http\Controllers\PostController;
 Route::get('/blog', [BlogController::class, 'index']);
 
 Route::get('/isi-post/{slug}', [BlogController::class, 'isi_blog'])->name('blog.isi');
+<<<<<<< HEAD
 Route::get('/list-post', [BlogController::class, 'list_blog'])->name('blog.list');
 Route::get('/list-category/{category}', [BlogController::class, 'list_category'])->name('blog.category');
 Route::get('/cari', [BlogController::class, 'cari'])->name('blog.cari');
 
+=======
+Route::get('/list-post', 'BlogController@list_blog')->name('blog.list');
+Route::get('/list-category/{category}', 'BlogController@list_category')->name('blog.category');
+Route::get('/cari', 'BlogController@cari')->name('blog.cari');
+Route::resource('/category', CategoryController::class);
+>>>>>>> 53c3b4ca6efb7e038d59bfd7e1b0094664b3c36f
 
 Route::group(['middleware' => 'auth'], function () {
     //Route::resource('/category', CategoryController::class);

@@ -134,3 +134,8 @@ svg:not(:root).svg-inline--fa {
     overflow: visible;
     vertical-align: -0.125em;
 }
+
+.name_navbar {
+    padding-right: 10px;
+    text-transform: capitalize;
+}

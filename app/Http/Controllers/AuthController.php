@@ -11,10 +11,9 @@ class AuthController extends Controller
 {
     public function index()
     {
-
-        // return view('Backend_admin.Layout.layout');
+        $login = Auth::user();
         if (Auth::check()) {
-            return view('Backend_admin.Layout.dashboard');
+            return view('Backend_admin.Contents.Account.profile', compact('login'));
         }
         return redirect()->route('login');
     }

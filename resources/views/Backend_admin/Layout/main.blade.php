@@ -55,11 +55,9 @@
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
                             <ul class="nav side-menu">
-                                <li><a><i class="fa fa-home"></i> Halaman <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li><a href="{{ asset('tentang') }}">Tentang Himed</a></li>
-                                        <li><a href="{{ asset('layanan') }}">Layanan Himed</a></li>
-                                    </ul>
+                                <li><a href="{{ asset('tentang') }}"><i class="fa fa-desktop"></i>Tentang Himed</a>
+                                </li>
+                                <li><a href="{{ asset('layanan') }}"><i class="fa fa-desktop"></i>Layanan Himed</a>
                                 </li>
                                 <li><a href="{{ asset('fitur') }}"><i class="fa fa-desktop"></i>Fitur Himed</a></li>
                                 <li><a href="{{ asset('paket') }}"><i class="fa fa-bar-chart-o"></i>Paket Himed</a>
@@ -76,23 +74,6 @@
                         </div>
                     </div>
                     <!-- /sidebar menu -->
-
-                    <!-- /menu footer buttons -->
-                    <div class="sidebar-footer hidden-small">
-                        <a data-toggle="tooltip" data-placement="top" title="Settings">
-                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Lock">
-                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                        </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="{{ route('logout') }}">
-                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        </a>
-                    </div>
-                    <!-- /menu footer buttons -->
                 </div>
             </div>
 
@@ -105,19 +86,18 @@
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
+                                <span class="name_navbar">{{ $login->name }}</span>
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="{{ asset('gentelella/production/images/img.jpg') }}" alt="">
+                                    <img src="../assets/uploads/profiles/{{ $login->img_profile }}" alt="img_null">
                                 </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right"
+                                <div class=" dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('profil') }}">PROFIL</a>
                                     <a class="dropdown-item" href="{{ route('akun') }}">AKUN</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"><i
                                             class="fa fa-sign-out pull-right"></i>KELUAR</a>
                                 </div>
                             </li>
-
                         </ul>
                     </nav>
                 </div>

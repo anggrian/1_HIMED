@@ -6,7 +6,8 @@ use App\Models\Feature;
 use App\Models\Package;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Flight;
+use Illuminate\Support\Facades\Auth;
+
 
 class FeatureController extends Controller
 {
@@ -17,13 +18,14 @@ class FeatureController extends Controller
      */
     public function index()
     {
+        $login = Auth::user();
         // $features = DB::table('features')->get();
         $features = DB::table('features')
             ->join('packages', 'features.packages_id', '=', 'packages.id')
             ->select('features.*', 'packages.title_package')
             ->get();
         $paket = DB::table('packages')->get();
-        return view('Backend_admin.Contents.Feature.feature_himed', compact('paket', 'features'));
+        return view('Backend_admin.Contents.Feature.feature_himed', compact('paket', 'features', 'login'));
     }
 
     public function frontend_fitur($main_title)
@@ -125,7 +127,13 @@ class FeatureController extends Controller
     public function destroy($feature)
     {
 
+
         $fitur = Feature::find($feature);
+        $thumbnail = "assets/uploads/" . $fitur->thumbnail;
+        if (file_exists(public_path($thumbnail))) {
+            //File::delete($thumbnail);
+            unlink(public_path($thumbnail));
+        }
         $fitur->delete();
         return redirect('fitur');
     }
