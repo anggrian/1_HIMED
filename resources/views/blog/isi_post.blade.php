@@ -122,6 +122,37 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="fb-comments" data-href="http://127.0.0.1:8000/isi-post/musik" data-width="" data-numposts="5"></div>
+                        
+                        {{-- input Komentar
+                        <div class="card my-4">
+                            <h5 class="card-header">leave a comment :</h5>
+                            <div class="card-body">
+                                <form action="" method="">
+                                    @csrf
+                                    <input type="hidden" name="_token" value="">
+                                    <div class="form-group">
+                                        <p>Name : </p>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                    <div class="form-group"></div>
+                                    <p>Comment : </p>
+                                    <input type="text" class="form-control" name="komentar">
+                                    <input class="btn btn-primary" type="submit"></button>
+                                </form>
+                            </div>
+                        </div>
+                        {{-- Komentar --}}
+                        {{-- <div class="media mb-4">
+                            <img class="d-flex mr-3 rounded-cicle" src="" alt="">
+                            <div class="media-body">
+                                <h5 class="mt-0" > Comment Name </h5>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem officiis accusamus ipsa incidunt? Nulla est ea nesciunt quam amet architecto, aspernatur dignissimos quis deleniti excepturi reiciendis nostrum asperiores optio eveniet?
+                            </div>
+                        </div> --}}
+
+                        </div>
                     </div>
                 </div>
             </div>

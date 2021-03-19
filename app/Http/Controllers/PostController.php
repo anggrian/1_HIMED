@@ -175,4 +175,5 @@ class PostController extends Controller
 
         return redirect()->back()->with('success','Post Berhasil Dihapus Secara Permanen');
     }
+    
 }

@@ -22,6 +22,7 @@ class BlogController extends Controller
 
         $data = Posts::where('slug', $slug)->get();
         return view('blog.isi_post', compact('data', 'category_widget'));
+        
     }
 
     public function list_blog()
@@ -48,4 +49,5 @@ class BlogController extends Controller
         $data = Posts::where('judul', $request->cari)->orWhere('judul', 'like', '%' . $request->cari . '%')->paginate(6);
         return view('blog.list_post', compact('data', 'category_widget'));
     }
+
 }

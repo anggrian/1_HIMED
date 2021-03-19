@@ -13,6 +13,7 @@
 	<link type="text/css" rel="stylesheet" href="{{ asset('assets/frontend/css/main.css') }}" />
 	<link rel="stylesheet" href="{{ asset('style_frontend/assett/navbar/navbar.css')}}">
 
+        
         <!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="{{ asset('assets/frontend/css/bootstrap.min.css') }}" />
 
@@ -22,6 +23,10 @@
         <title>Blog Himed</title>
     </head>
     <body>
+            
+        <div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v10.0" nonce="SvYXKbyb"></script>
+	
             	<!-- HEADER -->
 	@include('frontend.navbar')
 	        <!-- /HEADER -->
