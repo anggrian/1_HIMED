@@ -65,8 +65,9 @@ class PackageController extends Controller
      */
     public function edit($id)
     {
-        $paket = Package::findorfail($id);
-        return view('Backend_admin.Contents.Package.package_edit', ['packages' => $paket]);
+        $login = Auth::user();
+        $packages = Package::findorfail($id);
+        return view('Backend_admin.Contents.Package.package_edit', compact('login', 'packages'));
     }
 
     /**

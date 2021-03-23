@@ -70,8 +70,9 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        $layanan = Service::findorfail($id);
-        return view('Backend_admin.Contents.Page.service_edit', ['services' => $layanan]);
+        $login = Auth::user();
+        $services = Service::findorfail($id);
+        return view('Backend_admin.Contents.Page.service_edit', compact('login', 'services'));
     }
 
     /**

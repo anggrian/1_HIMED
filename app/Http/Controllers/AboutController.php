@@ -81,8 +81,9 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
-        $tentang = About::findorfail($id);
-        return view('Backend_admin.Contents.Page.about_edit', ['abouts' => $tentang]);
+        $login = Auth::user();
+        $abouts = About::findorfail($id);
+        return view('Backend_admin.Contents.Page.about_edit', compact('login', 'abouts'));
     }
 
     // {

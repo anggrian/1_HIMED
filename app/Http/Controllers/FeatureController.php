@@ -90,9 +90,10 @@ class FeatureController extends Controller
      */
     public function edit($id)
     {
-        $fitur = Feature::findorfail($id);
+        $login = Auth::user();
+        $features = Feature::findorfail($id);
 
-        return view('Backend_admin.Contents.Feature.feature_edit', ['features' => $fitur]);
+        return view('Backend_admin.Contents.Feature.feature_edit', compact('features', 'login'));
     }
 
     /**
